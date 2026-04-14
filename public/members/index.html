@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课题组成员 | The Huang Group</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: url('/media/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+        header { background: #f5f5f5; color: black; padding: 1.5rem 0; text-align: center; border-bottom: 1px solid #ddd; }
+        nav { background: #34495e; padding: 0.5rem; text-align: center; }
+        nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .profile { display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; }
+        .profile img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #2c3e50; }
+        .card { background: white; border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1, h2 { color: #2c3e50; }
+        .news-item { border-bottom: 1px solid #eee; padding: 0.5rem 0; }
+        footer { text-align: center; padding: 2rem; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Huang Group</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/research">Research</a>
+        <a href="/publications">Publications</a>
+        <a href="/members">Members</a>
+        <a href="/news">News</a>
+    </nav>
+    <div class="container">
+        
+<style>
+    .member-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 2rem 1.5rem;
+        margin: 2rem 0;
+    }
+    .member-card {
+        text-align: center;
+        background: white;
+        border-radius: 12px;
+        padding: 1rem 0.8rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
+    }
+    .member-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .member-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 0.8rem;
+        border: 3px solid #2c3e50;
+        background: #f0f2f5;
+    }
+    .member-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 0.2rem;
+    }
+    .member-role {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.2rem;
+    }
+    .member-period {
+        font-size: 0.8rem;
+        color: #999;
+    }
+    .section-title {
+        border-left: 6px solid #2c3e50;
+        padding-left: 1rem;
+        margin: 2.5rem 0 1.5rem;
+        color: #2c3e50;
+    }
+    .alumni-list {
+        column-count: 2;
+        column-gap: 3rem;
+        background: #f9fbfd;
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+    }
+    .alumni-item {
+        margin-bottom: 0.6rem;
+        break-inside: avoid;
+    }
+    @media (max-width: 600px) {
+        .alumni-list { column-count: 1; }
+    }
+</style>
+
+<div class="card">
+    <h2>👥 当前成员</h2>
+
+    
+    <h3 class="section-title">🧑‍🏫 科研人员</h3>
+    <div class="member-grid">
+        
+        <div class="member-card">
+            <img src="/media/members/yujinhai.jpg" alt="余进海" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">余进海</div>
+            <div class="member-role">特任副研究员</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/chenbin.jpg" alt="陈彬" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">陈彬</div>
+            <div class="member-role">博士后</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/chunjianlin.jpg" alt="淳建林" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">淳建林</div>
+            <div class="member-role">博士后</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/liushuai.jpg" alt="刘帅" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">刘帅</div>
+            <div class="member-role">毓秀-博士后</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/sunruobin.jpg" alt="孙若斌" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">孙若斌</div>
+            <div class="member-role">博士后</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/niujiafeng.jpg" alt="牛家峰" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">牛家峰</div>
+            <div class="member-role">博士后</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/yangbowen.jpg" alt="杨博文" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">杨博文</div>
+            <div class="member-role">博士后</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/chenpengfei.jpg" alt="陈鹏飞" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">陈鹏飞</div>
+            <div class="member-role">博士后</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/zuweisai.jpg" alt="祖维赛" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">祖维赛</div>
+            <div class="member-role">博士后</div>
+        </div>
+    </div>
+
+    
+    <h3 class="section-title">🎓 博士生</h3>
+    <div class="member-grid">
+        
+        <div class="member-card">
+            <img src="/media/members/xuyuanyuan.jpg" alt="许园园" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">许园园</div>
+            <div class="member-role">2025届博士毕业生</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/mingyang.jpg" alt="明阳" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">明阳</div>
+            <div class="member-role">2021级直博生</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/xingzhongqiu.jpg" alt="邢仲秋" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">邢仲秋</div>
+            <div class="member-role">2022级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/baoyuyan.jpg" alt="鲍雨妍" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">鲍雨妍</div>
+            <div class="member-role">2023级直博生</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/pengxichao.jpg" alt="彭西超" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">彭西超</div>
+            <div class="member-role">2023级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/wuzhouping.jpg" alt="吴周平" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">吴周平</div>
+            <div class="member-role">2023级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/sunhailong.jpg" alt="孙海龙" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">孙海龙</div>
+            <div class="member-role">2023级硕士/2025级硕转博</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/guozhiqi.jpg" alt="郭之旗" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">郭之旗</div>
+            <div class="member-role">2024级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/haoyingdi.jpg" alt="郝英迪" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">郝英迪</div>
+            <div class="member-role">2024级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/zhangtianying.jpg" alt="张天颖" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">张天颖</div>
+            <div class="member-role">2024级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/renyingzhi.jpg" alt="任樱枝" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">任樱枝</div>
+            <div class="member-role">2025级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/zhangchengqian.jpg" alt="张诚谦" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">张诚谦</div>
+            <div class="member-role">2025级博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/xuzhenhui.jpg" alt="徐振辉" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">徐振辉</div>
+            <div class="member-role">2025级联合培养博士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/taoqiang.jpg" alt="陶强" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">陶强</div>
+            <div class="member-role">2025级联合培养博士</div>
+        </div>
+    </div>
+
+    
+    <h3 class="section-title">📘 硕士生</h3>
+    <div class="member-grid">
+        
+        <div class="member-card">
+            <img src="/media/members/shifengming.jpg" alt="石丰铭" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">石丰铭</div>
+            <div class="member-role">2023级硕士生</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/wujiayu.jpg" alt="吴嘉钰" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">吴嘉钰</div>
+            <div class="member-role">2024级硕士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/zhangyuxuan.jpg" alt="张雨萱" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">张雨萱</div>
+            <div class="member-role">2024级硕士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/zhangshiheng.jpg" alt="张士恒" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">张士恒</div>
+            <div class="member-role">2024级硕士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/pingheng.jpg" alt="平恒" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">平恒</div>
+            <div class="member-role">2025级硕士</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/caochangyuan.jpg" alt="操昌远" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">操昌远</div>
+            <div class="member-role">2025级硕士</div>
+        </div>
+    </div>
+
+    
+    <h3 class="section-title">🔬 本科生</h3>
+    <div class="member-grid">
+        
+        <div class="member-card">
+            <img src="/media/members/zhangzihan.jpg" alt="张子涵" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">张子涵</div>
+            <div class="member-role">22级本科生</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/guozihao.jpg" alt="郭子豪" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">郭子豪</div>
+            <div class="member-role">22级本科生</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/mage.jpg" alt="马戈" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">马戈</div>
+            <div class="member-role">2023级本科生</div>
+        </div>
+        
+        <div class="member-card">
+            <img src="/media/members/zhangjiaxu.jpg" alt="张嘉旭" class="member-avatar" onerror="this.src='/media/avatar.jpg'">
+            <div class="member-name">张嘉旭</div>
+            <div class="member-role">2023级本科生</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card">
+    <h2>📜 往届成员</h2>
+    <div class="alumni-list">
+        <div class="alumni-item">赵贝贝 <span style="color:#999;">2021 - 2025.12</span></div>
+        <div class="alumni-item">王天航 <span style="color:#999;">2023.11 - 2025.8</span></div>
+        <div class="alumni-item">张佳玮 <span style="color:#999;">2021 - 2025</span></div>
+        <div class="alumni-item">朱睿琦 <span style="color:#999;">2024.02 - 2025</span></div>
+        <div class="alumni-item">刘福露 <span style="color:#999;">2021 - 2024.10</span></div>
+        <div class="alumni-item">李仁结 <span style="color:#999;">2021 - 2024.07</span></div>
+        <div class="alumni-item">戈冉 <span style="color:#999;">2024.02 - 2025.01</span></div>
+        <div class="alumni-item">马志斌 <span style="color:#999;">2023.3 - 2024.01</span></div>
+        <div class="alumni-item">徐蕙 <span style="color:#999;">2022.9 - 2023.6</span></div>
+        <div class="alumni-item">罗崇悦 <span style="color:#999;">2022.9 - 2023.6</span></div>
+        <div class="alumni-item">钱鹏程 <span style="color:#999;">2021 - 2022.03</span></div>
+        <div class="alumni-item">刘哲 <span style="color:#999;">2022.2 - 2022.09</span></div>
+    </div>
+</div>
+
+    </div>
+    <footer>
+        © 2026 The Huang Group. Address: School of Chemistry and Chemical Engineering, Nanjing University, Nanjing, China.
+    </footer>
+</body>
+</html>
