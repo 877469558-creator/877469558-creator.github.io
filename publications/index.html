@@ -1,178 +1,3035 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全部论文 | The Huang Group</title>
-    <style>
-        body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background: #f9f9f9;
-    color: #333;
-}
-        header { background: #f5f5f5; color: black; padding: 1.5rem 0; text-align: center; border-bottom: 1px solid #ddd; }
-        nav { background: #34495e; padding: 0.5rem; text-align: center; }
-        nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .profile { display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; }
-        .profile img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #2c3e50; }
-        .card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-        h1, h2 { color: #2c3e50; }
-        .news-item { border-bottom: 1px solid #eee; padding: 0.5rem 0; }
-        footer { text-align: center; padding: 2rem; color: #666; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Huang Group at the School of Chemistry, Nanjing University develops new-to-nature biocatalytic systems at the interface of enzyme engineering, visible-light catalysis, electrochemistry, and synthetic chemistry.">
+  <title>全部论文 | The Huang Group</title>
+  <style>
+    :root {
+      --ink: #182126;
+      --muted: #5c6870;
+      --soft: #f4f7f6;
+      --paper: #ffffff;
+      --line: #dfe7e5;
+      --violet: #6f005d;
+      --green: #6f005d;
+      --blue: #2d6f8f;
+      --gold: #c8a45d;
+      --charcoal: #555555;
+      --charcoal-dark: #2f2f2f;
+      --dark: #06101a;
+      --dark-2: #0a1621;
+      --dark-3: #101d28;
+      --dark-card: rgba(255, 255, 255, 0.065);
+      --dark-card-strong: rgba(255, 255, 255, 0.1);
+      --dark-line: rgba(214, 232, 236, 0.18);
+      --dark-text: #eef6f6;
+      --dark-muted: #b5c6cb;
+      --cyan: #8ee7f0;
+      --shadow: 0 18px 45px rgba(24, 33, 38, 0.08);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--dark-text);
+      background: var(--dark);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--violet);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      z-index: 10;
+      padding: 0.75rem 1rem;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #555555;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
+    }
+
+    .nav-shell {
+      width: calc(100% - 40px);
+      max-width: var(--max);
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.95rem;
+      color: #fff;
+      text-decoration: none;
+      font-family: "Trebuchet MS", ui-sans-serif, system-ui, sans-serif;
+      font-size: 1.45rem;
+      font-style: italic;
+      font-weight: 900;
+      letter-spacing: 0;
+      white-space: nowrap;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    }
+
+    .brand-symbol {
+      display: none;
+    }
+
+    .brand small {
+      display: none;
+      margin-top: 0.1rem;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .main-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0.42rem 0.78rem;
+      border-radius: 999px;
+      color: #f7f7f7;
+      font-size: 0.93rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.is-active {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+    }
+
+    main {
+      min-height: 60vh;
+    }
+
+    .wrap {
+      width: calc(100% - 40px);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .band {
+      padding: 4.5rem 0;
+    }
+
+    .band.compact {
+      padding: 2.7rem 0 0.8rem;
+    }
+
+    .band.tint {
+      background: var(--soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .band.tight {
+      padding: 3rem 0;
+    }
+
+    .section-kicker {
+      margin: 0 0 0.55rem;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.7rem, 3vw, 2.65rem);
+      line-height: 1.12;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .section-lede {
+      max-width: 780px;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.6rem;
+    }
+
+    .hero-copy .button-row {
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-height: 44px;
+      padding: 0.72rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: #fff;
+      font-weight: 750;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(24, 33, 38, 0.05);
+    }
+
+    .button.primary {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      color: var(--ink);
+      border-color: rgba(111, 0, 93, 0.35);
+    }
+
+    .button.primary:hover {
+      color: #fff;
+      background: #560049;
+    }
+
+    .hero-band {
+      padding: 4.2rem 0 4rem;
+      position: relative;
+      min-height: calc(100vh - 68px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #111618;
+      border-bottom: 0;
+    }
+
+    .hero-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      filter: saturate(1.08) contrast(1.04);
+      opacity: 0.86;
+      z-index: 0;
+    }
+
+    .hero-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 44%, rgba(3, 11, 23, 0.1), rgba(3, 8, 16, 0.68) 72%),
+        linear-gradient(rgba(2, 8, 18, 0.2), rgba(2, 8, 18, 0.74));
+      z-index: 1;
+    }
+
+    .hero-energy {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      overflow: hidden;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .light-orb,
+    .bolt,
+    .spark {
+      position: absolute;
+      display: block;
+    }
+
+    .light-orb {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      filter: blur(12px);
+      opacity: 0.58;
+      animation: energyPulse 6.5s ease-in-out infinite;
+    }
+
+    .light-orb.primary {
+      top: 15%;
+      left: 45%;
+      background: radial-gradient(circle, rgba(162, 255, 248, 0.88) 0, rgba(64, 223, 255, 0.32) 36%, transparent 70%);
+    }
+
+    .light-orb.secondary {
+      right: 30%;
+      bottom: 30%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 224, 128, 0.74) 0, rgba(255, 160, 73, 0.28) 36%, transparent 72%);
+      animation-delay: -2.2s;
+    }
+
+    .bolt {
+      width: 92px;
+      height: 176px;
+      opacity: 0.48;
+      background: linear-gradient(180deg, rgba(219, 252, 255, 0.98), rgba(118, 210, 255, 0.86) 46%, rgba(255, 214, 100, 0.84));
+      clip-path: polygon(44% 0, 68% 0, 55% 36%, 75% 36%, 30% 100%, 43% 54%, 26% 54%);
+      filter: drop-shadow(0 0 12px rgba(111, 225, 255, 0.9)) drop-shadow(0 0 24px rgba(255, 196, 87, 0.55));
+      transform-origin: center;
+      animation: boltGlow 4.8s ease-in-out infinite;
+    }
+
+    .bolt-one {
+      top: 16%;
+      right: 27%;
+      transform: rotate(18deg);
+    }
+
+    .bolt-two {
+      left: 25%;
+      bottom: 17%;
+      width: 58px;
+      height: 112px;
+      opacity: 0.42;
+      transform: rotate(-22deg);
+      animation-delay: -1.7s;
+    }
+
+    .spark {
+      width: 130px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(133, 246, 255, 0.95), rgba(255, 223, 120, 0.78), transparent);
+      filter: drop-shadow(0 0 12px rgba(125, 238, 255, 0.82));
+      opacity: 0.72;
+    }
+
+    .spark-one {
+      top: 30%;
+      left: 35%;
+      transform: rotate(-16deg);
+    }
+
+    .spark-two {
+      right: 28%;
+      bottom: 31%;
+      width: 160px;
+      transform: rotate(23deg);
+    }
+
+    @keyframes energyPulse {
+      0%,
+      100% {
+        opacity: 0.54;
+        transform: scale(0.94);
+      }
+
+      50% {
+        opacity: 0.84;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes boltGlow {
+      0%,
+      100% {
+        opacity: 0.45;
+      }
+
+      14% {
+        opacity: 0.78;
+      }
+
+      20% {
+        opacity: 0.54;
+      }
+
+      56% {
+        opacity: 0.72;
+      }
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.82rem;
+      font-weight: 820;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      max-width: 980px;
+      font-size: clamp(2.65rem, 5vw, 5.1rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+      color: #fff;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.62);
+    }
+
+    .hero-lede {
+      max-width: 980px;
+      margin: 1.4rem 0 0;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: clamp(1.05rem, 1.55vw, 1.28rem);
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-lede span {
+      display: block;
+    }
+
+    .signal-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin: 2rem auto 0;
+      max-width: 760px;
+    }
+
+    .signal-row div {
+      min-height: 92px;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .signal-row dt {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .signal-row dd {
+      margin: 0.35rem 0 0;
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 760;
+      line-height: 1.25;
+    }
+
+    .hero-figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #101214;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-figure img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .hero-figure figcaption {
+      padding: 0.85rem 1rem;
+      color: #dbe4e1;
+      font-size: 0.88rem;
+      background: #171b1f;
+    }
+
+    .research-spotlight {
+      padding: 4.2rem 0 3.7rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(248, 250, 249, 0.96), rgba(255, 255, 255, 0.92) 48%, rgba(247, 241, 246, 0.9)),
+        #fff;
+    }
+
+    .research-spotlight-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(360px, 0.72fr);
+      gap: 2.6rem;
+      align-items: center;
+    }
+
+    .research-spotlight-copy h1 {
+      max-width: 850px;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(2.25rem, 5vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .research-axis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.5rem;
+    }
+
+    .research-axis span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0.36rem 0.72rem;
+      border: 1px solid rgba(111, 0, 93, 0.18);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 800;
+      box-shadow: 0 8px 22px rgba(24, 33, 38, 0.05);
+    }
+
+    .research-axis span:nth-child(2) {
+      border-color: rgba(200, 164, 93, 0.35);
+      color: #725a22;
+    }
+
+    .research-axis span:nth-child(3) {
+      border-color: rgba(45, 111, 143, 0.28);
+      color: #245b74;
+    }
+
+    .research-spotlight-figure {
+      margin: 0;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .research-spotlight-figure img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      border-radius: 5px;
+      background: #fff;
+    }
+
+    .research-spotlight-figure figcaption {
+      margin-top: 0.75rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .signature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .signature-item {
+      min-height: 168px;
+      padding: 1.25rem 1.3rem;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .signature-item:nth-child(2) {
+      border-top-color: var(--violet);
+    }
+
+    .signature-item:nth-child(3) {
+      border-top-color: var(--blue);
+    }
+
+    .signature-mark {
+      display: inline-flex;
+      margin-bottom: 1.1rem;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .signature-item:nth-child(2) .signature-mark {
+      color: var(--violet);
+    }
+
+    .signature-item:nth-child(3) .signature-mark {
+      color: var(--blue);
+    }
+
+    .signature-item h2 {
+      margin: 0;
+      font-size: 1.16rem;
+      line-height: 1.25;
+    }
+
+    .signature-item p {
+      margin: 0.65rem 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .focus-grid,
+    .research-grid,
+    .member-grid,
+    .platform-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .focus-item,
+    .research-card,
+    .member-card,
+    .publication,
+    .platform-item,
+    .news-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .focus-item {
+      padding: 1.4rem;
+    }
+
+    .focus-mark {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 1rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      font-weight: 850;
+    }
+
+    .focus-item:nth-child(2) .focus-mark {
+      background: var(--violet);
+    }
+
+    .focus-item:nth-child(3) .focus-mark {
+      background: var(--gold);
+    }
+
+    .focus-item h3,
+    .research-card h3,
+    .platform-item h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .focus-item p,
+    .research-card p,
+    .platform-item p {
+      margin: 0.65rem 0 0;
+      color: var(--muted);
+    }
+
+    .home-research {
+      position: relative;
+      overflow: hidden;
+      padding-top: 4.7rem;
+      padding-bottom: 4.4rem;
+      background:
+        radial-gradient(circle at 76% 32%, rgba(142, 231, 240, 0.1), transparent 34%),
+        linear-gradient(180deg, #06101a, #08131d);
+    }
+
+    .home-research::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/research/media/home-protein-bg.png") center / 70% auto no-repeat;
+      opacity: 0.1;
+      filter: saturate(0.85);
+      pointer-events: none;
+    }
+
+    .home-research-simple {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .home-research-simple .section-title {
+      color: var(--dark-text);
+      font-size: 4rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .research-divider {
+      width: 96px;
+      height: 1px;
+      margin: 1.4rem auto 1.7rem;
+      background: linear-gradient(90deg, transparent, rgba(200, 164, 93, 0.95), transparent);
+    }
+
+    .research-divider::after {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 26px;
+      margin: -12px auto 0;
+      background: var(--gold);
+      border-radius: 999px;
+    }
+
+    .home-research-simple .section-lede {
+      max-width: 780px;
+      margin-right: auto;
+      margin-left: auto;
+      color: var(--dark-text);
+      font-size: 1.25rem;
+      line-height: 1.72;
+    }
+
+    .home-research-simple .section-lede.secondary {
+      margin-top: 0.2rem;
+      color: var(--dark-muted);
+      font-size: 1.08rem;
+    }
+
+    .research-mini-flow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1.8rem;
+    }
+
+    .research-mini-flow span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.38rem 0.78rem;
+      border: 1px solid rgba(214, 232, 236, 0.2);
+      border-radius: 999px;
+      color: var(--dark-text);
+      background: rgba(255, 255, 255, 0.065);
+      font-weight: 780;
+    }
+
+    .research-mini-flow i,
+    .research-mini-flow b {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 850;
+    }
+
+    .home-research-simple .button {
+      margin-top: 1.8rem;
+      color: var(--dark-text);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(214, 232, 236, 0.26);
+      box-shadow: none;
+    }
+
+    .home-research-simple .button:hover {
+      color: #fff;
+      border-color: rgba(142, 231, 240, 0.6);
+      background: rgba(142, 231, 240, 0.12);
+    }
+
+    .home-research-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.78fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .home-research-copy {
+      max-width: 720px;
+    }
+
+    .home-research-copy .section-title {
+      max-width: 820px;
+      font-size: 3.1rem;
+      line-height: 1.08;
+    }
+
+    .home-research-copy .section-lede {
+      max-width: 650px;
+      font-size: 1.2rem;
+      line-height: 1.65;
+    }
+
+    .home-research-copy .button {
+      margin-top: 1.6rem;
+      color: var(--dark-text);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(214, 232, 236, 0.26);
+      box-shadow: none;
+    }
+
+    .home-research-copy .button:hover {
+      color: #fff;
+      border-color: rgba(142, 231, 240, 0.6);
+      background: rgba(142, 231, 240, 0.12);
+    }
+
+    .home-research-visual {
+      position: relative;
+      min-height: 330px;
+      padding: 1.4rem;
+      border: 1px solid rgba(214, 232, 236, 0.18);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .flow-node,
+    .flow-product {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-align: center;
+      font-weight: 850;
+      line-height: 1.15;
+    }
+
+    .enzyme-node {
+      left: 1.6rem;
+      top: 50%;
+      width: 142px;
+      height: 142px;
+      color: #06101a;
+      background:
+        radial-gradient(circle at 36% 32%, rgba(255, 255, 255, 0.92), transparent 28%),
+        linear-gradient(145deg, #8ee7f0, #c8a45d);
+      transform: translateY(-50%);
+      box-shadow: 0 0 0 12px rgba(142, 231, 240, 0.08);
+    }
+
+    .flow-inputs {
+      position: absolute;
+      top: 1.4rem;
+      left: 12.4rem;
+      right: 1.4rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .flow-inputs span {
+      width: fit-content;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.75rem;
+      border: 1px solid rgba(214, 232, 236, 0.2);
+      border-radius: 999px;
+      color: var(--dark-text);
+      background: rgba(255, 255, 255, 0.07);
+      font-weight: 780;
+    }
+
+    .flow-inputs span:nth-child(2) {
+      margin-left: 2.2rem;
+      color: #ffe4a6;
+    }
+
+    .flow-inputs span:nth-child(3) {
+      margin-left: 0.7rem;
+      color: #bff7fc;
+    }
+
+    .flow-arrow {
+      position: absolute;
+      left: 12rem;
+      right: 8.8rem;
+      top: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(142, 231, 240, 0.15), rgba(142, 231, 240, 0.95), rgba(200, 164, 93, 0.9));
+    }
+
+    .flow-arrow::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      width: 14px;
+      height: 14px;
+      border-top: 2px solid rgba(200, 164, 93, 0.95);
+      border-right: 2px solid rgba(200, 164, 93, 0.95);
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .flow-product {
+      right: 1.6rem;
+      top: 50%;
+      width: 132px;
+      height: 132px;
+      color: #fff;
+      background: rgba(111, 0, 93, 0.9);
+      transform: translateY(-50%);
+      box-shadow: 0 0 0 12px rgba(111, 0, 93, 0.12);
+    }
+
+    .research-keywords {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.7rem;
+      margin-top: 2rem;
+    }
+
+    .research-keywords span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0.38rem 0.75rem;
+      border: 1px solid rgba(214, 232, 236, 0.18);
+      border-radius: 999px;
+      color: var(--dark-muted);
+      background: rgba(255, 255, 255, 0.045);
+      font-size: 0.92rem;
+      font-weight: 740;
+    }
+
+    .profile-feature {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .profile-photo {
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      background: #eef3f5;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      aspect-ratio: 1 / 1.15;
+      object-fit: cover;
+    }
+
+    .profile-body h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-role {
+      margin: 0.55rem 0 1rem;
+      color: var(--green);
+      font-weight: 760;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.25rem;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 7.2rem minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+    }
+
+    .news-date {
+      color: var(--green);
+      font-weight: 820;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .publication-section-title {
+      max-width: 1080px;
+      margin: 0 auto 2rem;
+      padding: 0.55rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .publication-section-title h2 {
+      margin: 0;
+      color: var(--dark-text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .publication-section-title.prior-title {
+      margin-top: 3.5rem;
+    }
+
+    .prior-publications {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      counter-reset: prior-pub;
+      display: grid;
+      gap: 0.72rem;
+    }
+
+    .prior-publications li {
+      counter-increment: prior-pub;
+      position: relative;
+      padding: 0.9rem 1rem 0.9rem 3.2rem;
+      border: 1px solid #dfe7e5;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.98rem;
+      line-height: 1.52;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .prior-publications li::before {
+      content: counter(prior-pub) ".";
+      position: absolute;
+      left: 1rem;
+      top: 0.9rem;
+      color: #1f405f;
+      font-weight: 800;
+    }
+
+    .prior-publications em {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .publication {
+      padding: 1.1rem 1.2rem;
+    }
+
+    .publication.visual {
+      padding: 1.15rem 1.25rem 1.2rem;
+      box-shadow: 0 8px 26px rgba(24, 33, 38, 0.06);
+    }
+
+    .publication.visual + .publication.visual {
+      margin-top: 1rem;
+    }
+
+    .publication.visual h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.12rem;
+      background: linear-gradient(transparent 57%, rgba(170, 216, 239, 0.72) 57%);
+      display: inline;
+      line-height: 1.45;
+    }
+
+    .publication-meta {
+      margin-top: 0.85rem;
+      color: #111;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.02rem;
+    }
+
+    .publication-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+
+    .publication-links a,
+    .publication-links span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0.22rem 0.65rem;
+      border: 1px solid #bfc6c9;
+      border-radius: 3px;
+      color: #1f405f;
+      background: #f7f9f9;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .publication-figure {
+      margin: 0.8rem auto 0;
+      max-width: min(460px, 88%);
+      text-align: center;
+    }
+
+    .publication-figure img {
+      width: auto;
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .publication-note {
+      margin-top: 0.9rem;
+      color: #124b77;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+    }
+
+    .publication.featured {
+      border-left: 5px solid var(--green);
+    }
+
+    .publication h3 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .publication p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      overflow-wrap: anywhere;
+    }
+
+    .publication .venue {
+      color: var(--ink);
+      font-weight: 780;
+    }
+
+    .publication .venue em {
+      font-style: italic;
+      font-weight: 780;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0.22rem 0.62rem;
+      border-radius: 999px;
+      background: #edf4f1;
+      color: #1f644e;
+      font-size: 0.78rem;
+      font-weight: 760;
+    }
+
+    .tag.alt {
+      background: #f3eef6;
+      color: var(--violet);
+    }
+
+    .research-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .research-card {
+      position: relative;
+      padding: 1.5rem;
+      overflow: hidden;
+    }
+
+    .research-number {
+      display: block;
+      margin-bottom: 1.2rem;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .paper-note {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .research-directions {
+      padding-top: 3rem;
+    }
+
+    .direction-panel {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.66fr) minmax(360px, 0.88fr);
+      gap: 2rem;
+      align-items: center;
+      margin-top: 1.1rem;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(24, 33, 38, 0.055);
+    }
+
+    .direction-panel:first-of-type {
+      margin-top: 0;
+    }
+
+    .direction-panel.reverse .direction-copy {
+      order: 2;
+    }
+
+    .direction-panel.reverse .direction-figure {
+      order: 1;
+    }
+
+    .direction-copy {
+      padding: 0.55rem 0.35rem;
+    }
+
+    .direction-copy h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.25rem, 2.3vw, 1.82rem);
+      line-height: 1.16;
+      overflow-wrap: anywhere;
+    }
+
+    .direction-copy p {
+      max-width: 650px;
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .direction-figure {
+      margin: 0;
+      padding: 0.8rem;
+      border: 1px solid #edf1f1;
+      border-radius: 6px;
+      background: #fbfcfc;
+    }
+
+    .direction-figure img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .research-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 4.6rem 0 4rem;
+      border-bottom: 1px solid var(--dark-line);
+      background: var(--dark);
+    }
+
+    .research-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      opacity: 0.24;
+      filter: saturate(0.95) contrast(1.02);
+    }
+
+    .research-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 58% 38%, rgba(142, 231, 240, 0.15), transparent 36%),
+        linear-gradient(90deg, rgba(6, 16, 26, 0.82), rgba(6, 16, 26, 0.94));
+    }
+
+    .research-hero-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.7fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .research-hero-copy h1 {
+      max-width: 900px;
+      margin: 0;
+      color: var(--dark-text);
+      font-size: clamp(2.35rem, 4.6vw, 4.25rem);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .compact-axis span {
+      min-height: 34px;
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--dark-text);
+    }
+
+    .research-hero-card,
+    .nature-card figure,
+    .topic-card figure {
+      margin: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+    }
+
+    .research-hero-card {
+      padding: 0.95rem;
+      min-height: 320px;
+      position: relative;
+    }
+
+    .research-hero-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+      border-radius: 5px;
+      background: #fff;
+    }
+
+    .research-hero-card figcaption {
+      margin-top: 0.75rem;
+      color: #46535a;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .concept-visual,
+    .direction-visual {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 45%, rgba(142, 231, 240, 0.16), transparent 34%),
+        linear-gradient(135deg, rgba(9, 23, 34, 0.96), rgba(16, 31, 42, 0.94));
+    }
+
+    .hero-concept p {
+      position: absolute;
+      left: 1.1rem;
+      right: 1.1rem;
+      bottom: 1rem;
+      margin: 0;
+      color: var(--dark-muted);
+      font-size: 0.85rem;
+      font-weight: 760;
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .bio-cell,
+    .cell-body {
+      position: absolute;
+      border: 2px solid rgba(142, 231, 240, 0.82);
+      border-radius: 48% 52% 45% 55% / 54% 46% 52% 48%;
+      background: rgba(142, 231, 240, 0.08);
+      box-shadow: 0 0 26px rgba(142, 231, 240, 0.22);
+    }
+
+    .bio-cell {
+      left: 12%;
+      top: 22%;
+      width: 150px;
+      height: 120px;
+    }
+
+    .enzyme-pocket {
+      position: absolute;
+      left: 41%;
+      top: 28%;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 14px solid rgba(122, 120, 220, 0.68);
+      border-top-color: rgba(142, 231, 240, 0.92);
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1), 0 0 24px rgba(122, 120, 220, 0.3);
+    }
+
+    .chem-ring {
+      position: absolute;
+      right: 15%;
+      top: 31%;
+      width: 86px;
+      height: 86px;
+      border: 4px solid rgba(229, 196, 111, 0.88);
+      clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%);
+      box-shadow: 0 0 22px rgba(229, 196, 111, 0.32);
+    }
+
+    .light-beam {
+      position: absolute;
+      left: 32%;
+      top: 18%;
+      width: 150px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(142, 231, 240, 0.95), transparent);
+      transform: rotate(-18deg);
+      box-shadow: 0 0 16px rgba(142, 231, 240, 0.8);
+    }
+
+    .electron-bolt {
+      position: absolute;
+      right: 28%;
+      top: 18%;
+      width: 54px;
+      height: 108px;
+      background: linear-gradient(180deg, #dffaff, #75d8ff 55%, #e5c46f);
+      clip-path: polygon(42% 0, 70% 0, 56% 38%, 76% 38%, 28% 100%, 42% 55%, 24% 55%);
+      filter: drop-shadow(0 0 14px rgba(142, 231, 240, 0.72));
+      opacity: 0.78;
+    }
+
+    .direction-visual {
+      height: 180px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+    }
+
+    .protein-loop {
+      position: absolute;
+      border: 8px solid rgba(142, 231, 240, 0.72);
+      border-radius: 50%;
+      filter: drop-shadow(0 0 10px rgba(142, 231, 240, 0.28));
+    }
+
+    .loop-a {
+      left: 20%;
+      top: 25%;
+      width: 92px;
+      height: 80px;
+      border-right-color: transparent;
+      transform: rotate(-18deg);
+    }
+
+    .loop-b {
+      right: 22%;
+      top: 30%;
+      width: 86px;
+      height: 88px;
+      border-left-color: transparent;
+      transform: rotate(28deg);
+    }
+
+    .active-site,
+    .metal-center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 20px rgba(229, 196, 111, 0.64);
+      transform: translate(-50%, -50%);
+    }
+
+    .mutation-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #8ee7f0;
+    }
+
+    .dot-a {
+      left: 38%;
+      top: 35%;
+    }
+
+    .dot-b {
+      right: 36%;
+      bottom: 28%;
+      background: #7a78dc;
+    }
+
+    .sun-core {
+      position: absolute;
+      left: 17%;
+      top: 22%;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f8f1a9, #e5c46f 62%, transparent 64%);
+      box-shadow: 0 0 24px rgba(229, 196, 111, 0.68);
+    }
+
+    .electrode {
+      position: absolute;
+      top: 36%;
+      width: 16px;
+      height: 78px;
+      border-radius: 8px;
+      background: rgba(238, 246, 246, 0.72);
+    }
+
+    .electrode.left {
+      left: 38%;
+    }
+
+    .electrode.right {
+      right: 25%;
+    }
+
+    .electron-path {
+      position: absolute;
+      left: 42%;
+      top: 48%;
+      width: 30%;
+      height: 42px;
+      border-top: 3px solid rgba(142, 231, 240, 0.78);
+      border-radius: 50%;
+    }
+
+    .chiral-product {
+      position: absolute;
+      right: 12%;
+      top: 42%;
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(229, 196, 111, 0.82);
+      border-radius: 50% 50% 50% 8px;
+      transform: rotate(-35deg);
+    }
+
+    .scaffold {
+      position: absolute;
+      left: 20%;
+      top: 25%;
+      width: 190px;
+      height: 95px;
+      border: 3px solid rgba(142, 231, 240, 0.58);
+      border-radius: 55% 45% 55% 45%;
+      border-bottom-color: rgba(122, 120, 220, 0.68);
+    }
+
+    .substrate {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      border-radius: 6px;
+      background: rgba(229, 196, 111, 0.82);
+      box-shadow: 0 0 14px rgba(229, 196, 111, 0.35);
+    }
+
+    .substrate.one {
+      right: 28%;
+      top: 32%;
+      transform: rotate(18deg);
+    }
+
+    .substrate.two {
+      right: 19%;
+      bottom: 30%;
+      background: rgba(142, 231, 240, 0.78);
+      transform: rotate(-18deg);
+    }
+
+    .catalytic-arrow {
+      position: absolute;
+      left: 58%;
+      top: 48%;
+      width: 95px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(142, 231, 240, 0.9), transparent);
+    }
+
+    .catalytic-arrow::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -5px;
+      border-left: 10px solid rgba(142, 231, 240, 0.9);
+      border-block: 6px solid transparent;
+    }
+
+    .cell-body {
+      left: 24%;
+      top: 18%;
+      width: 170px;
+      height: 125px;
+    }
+
+    .dna-strand {
+      position: absolute;
+      left: 34%;
+      top: 34%;
+      width: 84px;
+      height: 48px;
+      border-top: 3px solid rgba(229, 196, 111, 0.86);
+      border-bottom: 3px solid rgba(229, 196, 111, 0.86);
+      border-radius: 50%;
+      transform: rotate(-18deg);
+    }
+
+    .pathway-node {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #8ee7f0;
+    }
+
+    .pathway-node.n1 {
+      right: 34%;
+      top: 35%;
+    }
+
+    .pathway-node.n2 {
+      right: 27%;
+      top: 49%;
+      background: #e5c46f;
+    }
+
+    .pathway-node.n3 {
+      right: 20%;
+      top: 63%;
+      background: #7a78dc;
+    }
+
+    .product-drop {
+      position: absolute;
+      right: 11%;
+      top: 46%;
+      width: 34px;
+      height: 44px;
+      border-radius: 50% 50% 50% 6px;
+      background: rgba(229, 196, 111, 0.86);
+      transform: rotate(45deg);
+      box-shadow: 0 0 18px rgba(229, 196, 111, 0.42);
+    }
+
+    .research-section-head {
+      align-items: start;
+    }
+
+    .research-section-head .section-lede {
+      max-width: 520px;
+      margin-top: 0.25rem;
+    }
+
+    .concept-chain,
+    .featured-work-grid,
+    .topic-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .concept-chain {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .concept-step,
+    .nature-card,
+    .topic-card {
+      border: 1px solid var(--dark-line);
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--dark-card-strong), var(--dark-card));
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+    }
+
+    .concept-step {
+      position: relative;
+      padding: 1.35rem;
+    }
+
+    .concept-step::after {
+      content: "";
+      position: absolute;
+      top: 2rem;
+      right: -0.75rem;
+      width: 1.5rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), rgba(142, 231, 240, 0.45));
+    }
+
+    .concept-step:last-child::after {
+      display: none;
+    }
+
+    .concept-index,
+    .nature-year {
+      display: inline-flex;
+      margin-bottom: 0.8rem;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .concept-step h3,
+    .nature-card h3,
+    .topic-card h3 {
+      margin: 0;
+      color: var(--dark-text);
+      font-size: 1.08rem;
+      line-height: 1.3;
+    }
+
+    .concept-step p,
+    .nature-card p,
+    .topic-card p {
+      margin: 0.65rem 0 0;
+      color: var(--dark-muted);
+    }
+
+    .featured-work-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .nature-card,
+    .topic-card {
+      padding: 1rem;
+    }
+
+    .nature-card figure,
+    .topic-card figure {
+      padding: 0.55rem;
+      margin-bottom: 1rem;
+      box-shadow: none;
+    }
+
+    .nature-card img,
+    .topic-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .topic-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .platform-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .platform-item {
+      padding: 1.1rem;
+    }
+
+    .member-section + .member-section {
+      margin-top: 2.7rem;
+    }
+
+    .member-section h2 {
+      margin: 0 0 1rem;
+      font-size: 1.5rem;
+    }
+
+    .member-grid {
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    }
+
+    .member-card {
+      padding: 1rem;
+      min-height: 150px;
+    }
+
+    .member-initial {
+      display: inline-flex;
+      width: 52px;
+      height: 52px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      font-weight: 850;
+    }
+
+    .member-card:nth-child(3n + 2) .member-initial {
+      background: var(--green);
+    }
+
+    .member-card:nth-child(3n) .member-initial {
+      background: var(--violet);
+    }
+
+    .member-name {
+      margin: 0.9rem 0 0.18rem;
+      color: var(--ink);
+      font-weight: 820;
+      line-height: 1.25;
+    }
+
+    .member-role,
+    .member-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .alumni-list {
+      columns: 2 260px;
+      column-gap: 2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .alumni-list li {
+      break-inside: avoid;
+      margin: 0 0 0.55rem;
+      color: var(--muted);
+    }
+
+    .page-hero {
+      padding: 4rem 0 3rem;
+      background: var(--soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-hero .section-title {
+      max-width: 880px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .side-note {
+      border-top: 4px solid var(--gold);
+      padding: 1.2rem 0 0;
+    }
+
+    .side-note h3 {
+      margin: 0;
+    }
+
+    .side-note p {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      border-left: 3px solid var(--line);
+      padding-left: 1rem;
+    }
+
+    .timeline strong {
+      display: block;
+      color: var(--green);
+    }
+
+    .band {
+      background: linear-gradient(180deg, var(--dark), #08131d 54%, var(--dark));
+      color: var(--dark-text);
+    }
+
+    .band.tint {
+      background: linear-gradient(180deg, #0a1722, #0d1b27);
+      border-block: 1px solid var(--dark-line);
+    }
+
+    .section-title,
+    .profile-body h2,
+    .member-section h2,
+    .signature-item h2,
+    .focus-item h3,
+    .research-card h3,
+    .platform-item h3,
+    .direction-copy h3,
+    .side-note h3 {
+      color: var(--dark-text);
+    }
+
+    .section-lede,
+    .profile-body p,
+    .signature-item p,
+    .focus-item p,
+    .research-card p,
+    .platform-item p,
+    .direction-copy p,
+    .side-note p,
+    .paper-note,
+    .alumni-list li,
+    .timeline li {
+      color: var(--dark-muted);
+    }
+
+    .section-kicker,
+    .research-number,
+    .news-date,
+    .timeline strong {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+      border-bottom: 1px solid var(--dark-line);
+      color: var(--dark-text);
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      filter: saturate(0.9) contrast(0.98);
+      opacity: 0.28;
+    }
+
+    .page-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 55% 35%, rgba(83, 212, 224, 0.12), transparent 42%),
+        linear-gradient(90deg, rgba(6, 16, 26, 0.74), rgba(6, 16, 26, 0.92));
+    }
+
+    .page-hero .wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero .section-title,
+    .page-hero .section-lede {
+      color: var(--dark-text);
+    }
+
+    .page-hero .section-lede {
+      color: #cbd9dc;
+    }
+
+    .research-spotlight {
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+      border-bottom: 1px solid var(--dark-line);
+      color: var(--dark-text);
+    }
+
+    .research-spotlight::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      opacity: 0.23;
+      filter: saturate(0.95);
+    }
+
+    .research-spotlight::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 62% 38%, rgba(140, 231, 240, 0.14), transparent 36%),
+        linear-gradient(90deg, rgba(6, 16, 26, 0.82), rgba(6, 16, 26, 0.9));
+    }
+
+    .research-spotlight-grid {
+      position: relative;
+      z-index: 1;
+    }
+
+    .research-spotlight-copy h1 {
+      color: var(--dark-text);
+    }
+
+    .research-axis span {
+      border-color: var(--dark-line);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--dark-text);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+    }
+
+    .research-axis span:nth-child(2),
+    .research-axis span:nth-child(3) {
+      color: var(--dark-text);
+    }
+
+    .focus-item,
+    .research-card,
+    .member-card,
+    .platform-item,
+    .news-item,
+    .signature-item,
+    .direction-panel {
+      border-color: var(--dark-line);
+      background: linear-gradient(180deg, var(--dark-card-strong), var(--dark-card));
+      color: var(--dark-text);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+    }
+
+    .profile-feature {
+      padding: 1.8rem;
+      border: 1px solid var(--dark-line);
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 18% 35%, rgba(142, 231, 240, 0.12), transparent 32%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.045));
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.2);
+      align-items: center;
+    }
+
+    .profile-photo {
+      border-color: rgba(255, 255, 255, 0.22);
+      background: #111f2a;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+    }
+
+    .profile-role {
+      color: #e5c46f;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      border-color: var(--dark-line);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--dark-text);
+    }
+
+    .member-name {
+      color: var(--dark-text);
+    }
+
+    .member-role,
+    .member-meta {
+      color: var(--dark-muted);
+    }
+
+    .timeline li {
+      border-left-color: var(--dark-line);
+    }
+
+    .side-note {
+      color: var(--dark-text);
+    }
+
+    .button {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--dark-text);
+      box-shadow: none;
+    }
+
+    .button:hover {
+      color: #fff;
+      border-color: rgba(142, 231, 240, 0.46);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .direction-figure {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .research-spotlight-figure {
+      border-color: rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22);
+    }
+
+    .research-spotlight-figure figcaption {
+      color: #46535a;
+    }
+
+    .publication {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      color: var(--ink);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+    }
+
+    .publication p {
+      color: var(--muted);
+    }
+
+    .publication .venue {
+      color: var(--ink);
+    }
+
+    .site-footer {
+      background: #171d20;
+      color: #d7dfdc;
+      padding: 3.2rem 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+    }
+
+    .site-footer h2,
+    .site-footer h3 {
+      margin: 0 0 0.7rem;
+      color: #fff;
+    }
+
+    .site-footer p {
+      margin: 0.35rem 0;
+      color: #b8c6c2;
+    }
+
+    .site-footer a {
+      color: #fff;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .light-orb,
+      .bolt {
+        animation: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-shell {
+        min-height: auto;
+        padding: 0.85rem 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .main-nav {
+        justify-content: flex-start;
+      }
+
+      .hero-grid,
+      .home-research-layout,
+      .profile-feature,
+      .two-column,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.75rem, 12vw, 4.9rem);
+      }
+
+      .light-orb.primary {
+        left: 38%;
+      }
+
+      .bolt-one {
+        right: 10%;
+      }
+
+      .home-research::before {
+        background-position: center bottom;
+        background-size: 100% auto;
+        opacity: 0.08;
+      }
+
+      .home-research-simple .section-title {
+        font-size: 3.2rem;
+      }
+
+      .home-research-copy .section-title {
+        font-size: 2.45rem;
+      }
+
+      .home-research-visual {
+        min-height: 300px;
+      }
+
+      .focus-grid,
+      .research-grid,
+      .research-hero-layout,
+      .research-spotlight-grid,
+      .signature-grid,
+      .concept-chain,
+      .featured-work-grid,
+      .topic-grid,
+      .direction-panel,
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .concept-step::after {
+        display: none;
+      }
+
+      .direction-panel.reverse .direction-copy,
+      .direction-panel.reverse .direction-figure {
+        order: initial;
+      }
+
+      .profile-photo {
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap,
+      .nav-shell {
+        width: calc(100% - 28px);
+        max-width: var(--max);
+      }
+
+      .hero-band,
+      .page-hero,
+      .research-hero,
+      .research-spotlight {
+        padding-top: 2.6rem;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.25rem, 9vw, 3.05rem);
+        line-height: 1;
+      }
+
+      .hero-lede {
+        max-width: 100%;
+        line-height: 1.48;
+      }
+
+      .hero-lede span {
+        display: inline;
+      }
+
+      .light-orb {
+        opacity: 0.55;
+        transform: scale(0.78);
+      }
+
+      .light-orb.primary {
+        top: 14%;
+        left: 30%;
+      }
+
+      .light-orb.secondary {
+        right: 3%;
+        bottom: 24%;
+      }
+
+      .bolt {
+        opacity: 0.38;
+        transform: scale(0.72) rotate(16deg);
+      }
+
+      .bolt-two,
+      .spark-two {
+        display: none;
+      }
+
+      .research-spotlight-copy h1 {
+        font-size: clamp(2.25rem, 11vw, 3.25rem);
+      }
+
+      .home-research-copy .section-title {
+        font-size: 2rem;
+        line-height: 1.12;
+      }
+
+      .home-research-simple .section-title {
+        font-size: 2.65rem;
+      }
+
+      .home-research-copy .section-lede {
+        font-size: 1.02rem;
+      }
+
+      .home-research-simple .section-lede {
+        font-size: 1.05rem;
+        line-height: 1.62;
+      }
+
+      .home-research-simple .section-lede.secondary {
+        font-size: 0.98rem;
+      }
+
+      .research-mini-flow {
+        gap: 0.45rem;
+      }
+
+      .research-mini-flow span {
+        min-height: 34px;
+        padding: 0.32rem 0.62rem;
+        font-size: 0.88rem;
+      }
+
+      .home-research-visual {
+        min-height: 430px;
+      }
+
+      .enzyme-node {
+        left: 50%;
+        top: 5.5rem;
+        width: 128px;
+        height: 128px;
+        transform: translateX(-50%);
+      }
+
+      .flow-inputs {
+        top: 14rem;
+        left: 1rem;
+        right: 1rem;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .flow-inputs span:nth-child(2),
+      .flow-inputs span:nth-child(3) {
+        margin-left: 0;
+      }
+
+      .flow-arrow {
+        left: 50%;
+        right: auto;
+        top: 26rem;
+        width: 2px;
+        height: 48px;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, rgba(142, 231, 240, 0.2), rgba(142, 231, 240, 0.95), rgba(200, 164, 93, 0.9));
+      }
+
+      .flow-arrow::after {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -2px;
+        transform: translateX(-50%) rotate(135deg);
+      }
+
+      .flow-product {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 1.3rem;
+        width: 124px;
+        height: 124px;
+        transform: translateX(-50%);
+      }
+
+      .publication-figure {
+        max-width: 100%;
+      }
+
+      .publication-figure img {
+        width: 100%;
+        max-height: 190px;
+      }
+
+      .band {
+        padding: 3.2rem 0;
+      }
+
+      .band.compact {
+        padding: 2.2rem 0 0.4rem;
+      }
+
+      .direction-panel {
+        padding: 1rem;
+      }
+
+      .direction-figure img {
+        max-height: 185px;
+      }
+
+      .nature-card img,
+      .topic-card img {
+        height: 150px;
+      }
+
+      .main-nav a {
+        padding: 0.35rem 0.58rem;
+      }
+
+      .signal-row,
+      .news-item {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>The Huang Group</h1>
-    </header>
-    <nav>
-        <a href="/research">Research</a>
-        <a href="/publications">Publications</a>
-        <a href="/presentations">Presentations</a>
-        <a href="/people">People</a>
-        <a href="/huang">Xiaoqiang Huang</a>
-    </nav>
-    <div class="container">
-        
-<div class="card">
-    <h2>📚 All Publications</h2>
-    <p style="color: #666; margin-bottom: 2rem;">* Corresponding author | Including pre-NJU papers</p>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/research/">
+        <span class="brand-symbol" aria-hidden="true"></span>
+        <span>HUANG LAB<small>Nanjing University</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="/research/" class="">Home</a>
+        <a href="/research/research/" class="">Research</a>
+        <a href="/research/publications/" class="is-active">Publications</a>
+        <a href="/research/people/" class="">People</a>
+        <a href="/research/huang/" class="">Xiaoqiang</a>
+        <a href="/research/contact/" class="">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content">
     
-    <div style="font-size: 0.95rem; line-height: 1.6;">
-        
-        <p><strong>27.</strong> Chun, J.; Bao, Y.; Zhang, Q.; Hou, X.; Wu, Z.; Sun, H.; Xing, Z.; Chen, B.; Zhang, Z.; Zhao, Y.; Zhou, J.*; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Enantioselective C(sp3)–C(sp3) bond formation by synergistic thiamine-dependent radical biocatalysis and photoredox catalysis.</em> <strong>Nat. Catal.</strong> 2026. doi: 10.1038/s41929-026-01515-w</p>
-        
-        
-        <p><strong>26.</strong> Yu, J.; Zhang, Q.; Zhang, S.; Hao, Y.; Chen, B.; Zhao, Y.; Zhang, Y.*; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Enantioselective alkene azidooxygenation by direct visible-light excitation of an engineered ene-reductase.</em> <strong>J. Am. Chem. Soc.</strong> 2026. doi: 10.1021/jacs.5c18639</p>
-        
-        
-        <p><strong>25.</strong> Qu, G.*; Zhong, F.*; Xu, J.*; <strong>Huang, X.*</strong>; Sun, Z.*<br>
-        <em>Intelligent enzyme design and hybrid catalytic systems: Driving innovation in biocatalysis.</em> <strong>GSC</strong> 2025. doi: 10.1016/j.gresc.2025.12.002</p>
-        
-        
-        <p><strong>24.</strong> Ming, Y.; Wu, Z.; Xu, Y.; Chen, Y.; Xing, Z.; Peng, X.; Chun, J.; Sun, H.; Wu, J.; Zheng, Y.; Jiang, L.*; <strong>Huang, X.*</strong><br>
-        <em>Photobiocatalytic radical repositioning for enantioselective acylation of remote C–C/C–H bonds.</em> <strong>Nat. Catal.</strong> 2025. 8, 1198–1207. doi:10.1038/s41929-025-01435-1</p>
-        
-        
-        <p><strong>23.</strong> Chen, B.; Ge, R.; Yu, J.; Zhu, R.; Zhu, Q.; Zhang, J.; Cao, M.; <strong>Huang, X.*</strong><br>
-        <em>Photobiocatalytic radical hydroalkylation with C(sp3)-H bonds enabled by engineered imine reductase and redox buffering.</em> <strong>J. Am. Chem. Soc.</strong> 2025, 147, 38195-38203.</p>
-        
-        
-        <p><strong>22.</strong> Zhao, B.; Xu, Y.; <strong>Huang, X.*</strong><br>
-        <em>Repurposing thiamine-dependent enzymes for radical biocatalysis.</em> <strong>Methods Enzymol.</strong> 2025, 721, 169-189. doi: 10.1016/bs.mie.2025.08.006</p>
-        
-        
-        <p><strong>21.</strong> Peng, X.; Feng, J.; Liu, F.; Xie, W.-Z.; Sun, H.; Xu, Y.; Ming, Y.; Xing, Z.; Zheng, Y.; Wang, B.*; Long, Y.-T.*; <strong>Huang, X.*</strong><br>
-        <em>Photobiocatalytic benzylic C–H acylation enabled by the synergy of a thiamine-dependent enzyme, an organophotocatalyst and hydrogen-atom transfer.</em> <strong>Nat. Synth.</strong> 2025, 4, 1453–1461. doi: 10.1038/s44160-025-00866-9</p>
-        
-        
-        <p><strong>20.</strong> Zhang, Z.; Zhang, Q.; Wang, T.; Zhao, B.; Chen, B.; Wang, X.; Chun, J.; Zhang, T.; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Kinetic hydrolysis of sulfinamides toward S(IV) chirality enabled by visible-light-excited ene-reductases.</em> <strong>ACS Catal.</strong> 2025, 15, 12684-12690.</p>
-        
-        
-        <p><strong>19.</strong> Chen, B.; Zhang, Q.; Yu, J.; Zhao, B.; Ge, R.; Zhang, Z.; Luo, D.; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Steering oxygen-centred radicals with ground-state ene-reductases for enantioselective intermolecular hydroalkoxylations.</em> <strong>Nat. Catal.</strong> 2025, 8, 740-748. doi: 10.1038/s41929-025-01372-z</p>
-        
-        
-        <p><strong>18.</strong> Zhao, B.; Xu, Y.; Zhu, Q.; Liu, A.; Peng, X.; Zhang, T.; Yu, L.; Zhang, Y.; <strong>Huang, X.*</strong><br>
-        <em>Electricity-driven enzymatic dynamic kinetic oxidation.</em> <strong>Nature</strong> 2025, 643, 699-704. doi: 10.1038/s41586-025-09178-6</p>
-        
-        
-        <p><strong>17.</strong> Zhang, J.; Zhang, Q.; Ge, R.; Liu, A.; Chen, B.; Zhang, Z.; Zhao, B.; Yu, J.; Zhao, Y.; Yu, L.; Cao, M.; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Enantiodivergent radical alkylation by synergistic Lewis-acid-enzyme and photoredox catalysis.</em> <strong>Angew. Chem. Int. Ed.</strong> 2025, 64, e202500338.</p>
-        
-        
-        <p><strong>16.</strong> Liu, F.; Peng, X.; Yu, J.; <strong>Huang, X.*</strong><br>
-        <em>Recent advances in repurposing natural enzymes for new-to-nature asymmetric photobiotransformations.</em> <strong>Org. Chem. Front.</strong> 2025, 12, 4608-4634. DOI: 10.1039/D5QO00470E</p>
-        
-        
-        <p><strong>15.</strong> Shi, F.; Chen, B.; Yu, J.; Zhu, R.; Zheng, Y.; <strong>Huang, X.*</strong><br>
-        <em>Enantioselective biosynthesis of vicinal diamines enabled by synergistic photo/biocatalysis consisting of an ene-reductase and a green-light-excited organic dye.</em> <strong>Chin. J. Catal.</strong> 2025, 68, 223-229.</p>
-        
-        
-        <p><strong>14.</strong> Yu, J.; Chen, B.; <strong>Huang, X.*</strong><br>
-        <em>Single-electron oxidation triggered by visible-light-excited enzymes for asymmetric biocatalysis.</em> <strong>Angew. Chem. Int. Ed.</strong> 2025, e202419262. (Minireview)</p>
-        
-        
-        <p><strong>13.</strong> Xing, Z.; Liu, F.; Feng, J.; Yu, L.; Wu, Z.; Zhao, B.; Chen, B.; Ping, H.; Xu, Y.; Liu, A.; Zhao, Y.; Wang, C.; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Synergistic photobiocatalysis for enantioselective triple radical sorting.</em> <strong>Nature</strong> 2025, 637, 1118-1123. DOI: 10.1038/s41586-024-08399-5</p>
-        
-        
-        <p><strong>12.</strong> Yu, J.; Hao, Y.; <strong>Huang, X.*</strong><br>
-        <em>Repurposing type I aldolase for stereospecific radical coupling with light.</em> <strong>Chem Catalysis</strong> 2024, 4 (11). DOI: 10.1016/j.checat.2024.101191 (invited Preview)</p>
-        
-        
-        <p><strong>11.</strong> Xu, Y.; Liu, F.; Zhao, B.; <strong>Huang, X.*</strong><br>
-        <em>Repurposing naturally occurring enzymes using visible light.</em> <strong>Chin. J. Chem.</strong> 2024, 42, 3553-3558. DOI: 10.1002/cjoc.202400656</p>
-        
-        
-        <p><strong>10.</strong> Chen, B.; Li, R.; Feng, J.; Zhao, B.; Zhang, J.; Yu, J.; Xu, Y.; Xing, Z.; Zhao, Y.; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Modular access to chiral amines via imine reductase-based photoenzymatic catalysis.</em> <strong>J. Am. Chem. Soc.</strong> 2024, 146, 14278-14286. DOI: 10.1021/jacs.4c03879</p>
-        
-        
-        <p><strong>9.</strong> Yu, J.; Zhang, Q.; Zhao, B.; Wang, T.; Zheng, Y.; Wang, B.*; Zhang, Y.*; <strong>Huang, X.*</strong><br>
-        <em>Repurposing visible-light-excited ene-reductases for diastereo- and enantioselective lactones synthesis.</em> <strong>Angew. Chem. Int. Ed.</strong> 2024, 63, e202402673.</p>
-        
-        
-        <p><strong>8.</strong> Xu, Y.; Chen, H.; Yu, L.; Peng, X.; Zhang, J.; Xing, Z.; Bao, Y.; Liu, A.; Zhao, Y.; Tian, C.*; Liang, Y.*; <strong>Huang, X.*</strong><br>
-        <em>A light-driven enzymatic enantioselective radical acylation.</em> <strong>Nature</strong> 2024, 625, 74–78. DOI: 10.1038/s41586-023-06822-x</p>
-        
-        
-        <p><strong>7.</strong> Bao, Y.; Xu, Y.; <strong>Huang, X.*</strong><br>
-        <em>Focused rational iterative site-specific mutagenesis (FRISM): A powerful method for enzyme engineering.</em> <strong>Mol. Catal.</strong> 2024, 553, 113755. (invited review)</p>
-        
-        
-        <p><strong>6.</strong> Zhang, J.; Zhang, Q.; Chen, B.; Yu, J.; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Photoenzymatic conversion of enamides to enantioenriched benzylic amines enabled by visible-light-induced single-electron reduction.</em> <strong>ACS Catal.</strong> 2023, 13, 15682-15690.</p>
-        
-        
-        <p><strong>5.</strong> Zhao, B.; Feng, J.; Yu, L.; Xing, Z.; Chen, B.; Liu, A.; Liu, F.; Shi, F.; Zhao, Y.; Tian, C.*; Wang, B.*; <strong>Huang, X.*</strong><br>
-        <em>Direct visible-light-excited flavoproteins for redox-neutral asymmetric radical hydroarylation.</em> <strong>Nat. Catal.</strong> 2023, 6, 996-1004. DOI: 10.1038/s41929-023-01024-0</p>
-        
-        
-        <p><strong>4.</strong> Zeng, S.; Bao, Y.; Cao, A.; <strong>Huang, X.*</strong><br>
-        <em>Rational evolution of a fatty acid photodecarboxylase for highly selective photodecarboxylation of trans fatty acid.</em> <strong>Univ. Chem.</strong> 2023, 38, 1-10.</p>
-        
-        
-        <p><strong>3.</strong> Ming, Y.; Chen, B.; <strong>Huang, X.*</strong><br>
-        <em>Recent advances in photoenzymatic synthesis.</em> <strong>Synth. Biol. J.</strong> 2022, 3, 1-25.</p>
-        
-        
-        <p><strong>2.</strong> <strong>Huang, X.</strong>; Feng, J.; Cui, J.; Jiang, G.; Harrison, W.; Zang, X.; Zhou, J.; Wang, B.*; Zhao, H.*<br>
-        <em>Photoinduced chemomimetic biocatalysis for enantioselective intermolecular radical conjugate addition.</em> <strong>Nat. Catal.</strong> 2022, 5, 586–593.</p>
-        
-        
-        <p><strong>1.</strong> Wesley, H.; <strong>Huang, X.*</strong>; Zhao, H.*<br>
-        <em>Photobiocatalysis for abiological transformations.</em> <strong>Acc. Chem. Res.</strong> 2022, 55, 1087–1096.</p>
-        
-        <h3 style="margin-top: 2rem;">Prior to NJU</h3>
-        <p><strong>1.</strong> <strong>Huang, X.</strong>;† Wang, B.;† Wang, Y.; Jiang, G.; Feng, J.; Zhao, H.* <em>Photoenzymatic Enantioselective Intermolecular Radical Hydroalkylation.</em> <strong>Nature</strong> 2020, 584, 69-74. (†Co-first author)</p>
-        <p><strong>2.</strong> <strong>Huang, X.</strong>; Cao, M.; Zhao, H.* <em>Integrating Biocatalysis with Chemocatalysis for Selective Transformations.</em> <strong>Curr. Opin. Chem. Biol.</strong> 2020, 55, 161-170.</p>
-        <p><strong>3.</strong> <strong>Huang, X.</strong>; Meggers, E.* <em>Asymmetric Photocatalysis with Bis-Cyclometalated Rhodium Complexes.</em> <strong>Acc. Chem. Res.</strong> 2019, 52, 833-847.</p>
-        <p><strong>4.</strong> <strong>Huang, X.</strong>; Zhang, Q.; Lin, J.; Harms, K.; Meggers, E.* <em>Electricity Driven Asymmetric Lewis Acid Catalysis.</em> <strong>Nat. Catal.</strong> 2019, 2, 34-40.</p>
-        <p><strong>5.</strong> <strong>Huang, X.</strong>; Lin, J.; Shen, T.; Harms, K.; Marchini, M.; Ceroni, P.; Meggers, E.* <em>Asymmetric [3+2] Photocycloadditions of Cyclopropanes with Alkenes or Alkynes via Visible Light Excitation of Catalyst-Bound Substrates.</em> <strong>Angew. Chem., Int. Ed.</strong> 2018, 57, 5454-5458.</p>
-        <p><strong>6.</strong> <strong>Huang, X.</strong>; Li, X.; Xie, X.; Harms, K.; Riedel, R.; Meggers, E.* <em>Catalytic Asymmetric Synthesis of a Nitrogen Heterocycle through Stereocontrolled Direct Photoreaction from Electronically Excited State.</em> <strong>Nat. Commun.</strong> 2017, 8, 2245.</p>
-        <p><strong>7.</strong> <strong>Huang, X.</strong>; Quinn, T. R.; Harms, K.; Webster, R. D.; Zhang, L.; Wiest, O.; Meggers, E.* <em>Direct Visible-Light-Excited Asymmetric Lewis Acid Catalysis of Intermolecular [2+2] Photocycloadditions.</em> <strong>J. Am. Chem. Soc.</strong> 2017, 139, 9120-9123.</p>
-        <p><strong>8.</strong> <strong>Huang, X.</strong>; Webster, R. D.; Harms, K.; Meggers, E.* <em>Asymmetric Catalysis with Organic Azides and Diazo Compounds Initiated by Photoinduced Electron Transfer.</em> <strong>J. Am. Chem. Soc.</strong> 2016, 138, 12636-12642.</p>
-        <p><strong>9.</strong> <strong>Huang, X.</strong>; Li, X.; Zou, M.; Song, S.; Tang, C.; Yuan, Y.; Jiao, N.* <em>From Ketones to Esters by a Cu-Catalyzed Highly Selective C(CO)–C(alkyl) Bond Cleavage: Aerobic Oxidation and Oxygenation with Air.</em> <strong>J. Am. Chem. Soc.</strong> 2014, 136, 14858-14856.</p>
-        <p><strong>10.</strong> Chen, F.;† <strong>Huang, X.</strong>;† Li, X.;† Shen, T.; Zou, M.; Jiao, N.* <em>Dehydrogenative N-Incorporation: A Direct Approach to Quinoxaline N-Oxides under Mild Conditions.</em> <strong>Angew. Chem., Int. Ed.</strong> 2014, 53, 10495-10499. (†Co-first author)</p>
-        
-    </div>
-</div>
 
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="section-kicker">Publications</p>
+    <h1 class="section-title">Publications</h1>
+    <p class="section-lede">Representative papers from the Huang Group. Graphical abstracts are included where available to make the chemistry easier to scan.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="publication-section-title">
+      <h2>Nanjing University</h2>
     </div>
-    <footer>
-        © 2026 The Huang Group. Address: School of Chemistry and Chemical Engineering, Nanjing University, Nanjing, China.
-    </footer>
+    <div class="publication-list">
+      
+        <article class="publication visual">
+          <h3>30. Electroenzymatic oxidative desymmetrization by engineered thiamine-dependent enzymes for the enantioselective synthesis of axially chiral biaryls.</h3>
+          
+          <p class="publication-meta">Shi, F.; Ren, Y.; Wu, J.; Yu, J.; Zhao, B.; Chen, B.; Liu, A.; Zhao, Y.; Yu, L.*; Zhang, Y.*; Huang, X*. <strong class="venue"><em>J. Am. Chem. Soc.</em> 2026</strong>. DOI: 10.1021/jacs.6c01275</p>
+          <div class="publication-links">
+            <a href="https://pubs.acs.org/doi/10.1021/jacs.6c01275" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-30.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>29. Thiamine-based photobiocatalysis for the enantioselective construction of all-carbon quaternary stereocentres with two minimally different alkyl groups.</h3>
+          
+          <p class="publication-meta">Bai, J.; Xu, Y.; Sun, R.; Che, F.; Shang, G.; Zhang, G.; Huang, X.*; Huang, C.* <strong class="venue"><em>Nat. Synth.</em> 2026</strong>. DOI: 10.1038/s44160-026-01074-9</p>
+          <div class="publication-links">
+            <a href="https://www.nature.com/articles/s44160-026-01074-9" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by Nature Synthesis.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-29.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>28. Electrochemically driven enzymatic oxidative desymmetrization for the enantioselective construction of silicon stereocenter.</h3>
+          
+          <p class="publication-meta">Wu, J.; Zhu, Q.; Liu, S.; Yu, J.; Zhao, B.; Chen, B.; Liu, A.; Shi, F.; Yu, L.*; Zhang, Y.*; Huang, X.* <strong class="venue"><em>Angew. Chem. Int. Ed.</em> 2026</strong>. DOI: 10.1002/anie.3445735</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1002/anie.3445735" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-28.jpg" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>27. Enantioselective C(sp3)-C(sp3) bond formation by synergistic thiamine-dependent radical biocatalysis and photoredox catalysis.</h3>
+          
+          <p class="publication-meta">Chun, J.; Bao, Y.; Zhang, Q.; Hou, X.; Wu, Z.; Sun, H.; Xing, Z.; Chen, B.; Zhang, Z.; Zhao, Y.; Zhou, J.*; Wang, B.*; Huang, X.* <strong class="venue"><em>Nat. Catal.</em> 2026</strong>. DOI: 10.1038/s41929-026-01515-w</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41929-026-01515-w" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by Nature Catalysis.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-27.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>26. Enantioselective alkene azidooxygenation by direct visible-light excitation of an engineered ene-reductase.</h3>
+          
+          <p class="publication-meta">Yu, J.; Zhang, Q.; Zhang, S.; Hao, Y.; Chen, B.; Zhao, Y.; Zhang, Y.*; Wang, B.*; Huang, X.* <strong class="venue"><em>J. Am. Chem. Soc.</em> 2026</strong>. DOI: 10.1021/jacs.5c18639</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1021/jacs.5c18639" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-26.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>25. Intelligent enzyme design and hybrid catalytic systems: Driving innovation in biocatalysis.</h3>
+          
+          <p class="publication-meta">Qu, G.*; Zhong, F.*; Xu, J.*; Huang, X.*; Sun, Z.* <strong class="venue"><em>GSC</em> 2025</strong>. DOI: 10.1016/j.gresc.2025.12.002</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1016/j.gresc.2025.12.002" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-25.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>24. Photobiocatalytic radical repositioning for enantioselective acylation of remote C-C/C-H bonds.</h3>
+          
+          <p class="publication-meta">Ming, Y.; Wu, Z.; Xu, Y.; Chen, Y.; Xing, Z.; Peng, X.; Chun, J.; Sun, H.; Wu, J.; Zheng, Y.; Jiang, L.*; Huang, X.* <strong class="venue"><em>Nat. Catal.</em> 2025, 8, 1198-1207</strong>. DOI: 10.1038/s41929-025-01435-1</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41929-025-01435-1" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by NSFC and Synfacts.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-24.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>23. Photobiocatalytic radical hydroalkylation with C(sp3)-H bonds enabled by engineered imine reductase and redox buffering.</h3>
+          
+          <p class="publication-meta">Chen, B.; Ge, R.; Yu, J.; Zhu, R.; Zhu, Q.; Zhang, J.; Cao, M.; Huang, X.* <strong class="venue"><em>J. Am. Chem. Soc.</em> 2025, 147, 38195-38203</strong>. DOI: 10.1021/jacs.5c10377</p>
+          <div class="publication-links">
+            <a href="https://pubs.acs.org/doi/10.1021/jacs.5c10377" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-23.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>22. Repurposing thiamine-dependent enzymes for radical biocatalysis.</h3>
+          
+          <p class="publication-meta">Zhao, B.; Xu, Y.; Huang, X.* <strong class="venue"><em>Methods Enzymol.</em> 2025, 721, 169-189</strong>. DOI: 10.1016/bs.mie.2025.08.006</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1016/bs.mie.2025.08.006" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-22.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>21. Photobiocatalytic benzylic C-H acylation enabled by the synergy of a thiamine-dependent enzyme, an organophotocatalyst and hydrogen-atom transfer.</h3>
+          
+          <p class="publication-meta">Peng, X.; Feng, J.; Liu, F.; Xie, W.-Z.; Sun, H.; Xu, Y.; Ming, Y.; Xing, Z.; Zheng, Y.; Wang, B.*; Long, Y.-T.*; Huang, X.* <strong class="venue"><em>Nat. Synth.</em> 2025, 4, 1453-1461</strong>. DOI: 10.1038/s44160-025-00866-9</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s44160-025-00866-9" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-21.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>20. Kinetic hydrolysis of sulfinamides toward S(IV) chirality enabled by visible-light-excited ene-reductases.</h3>
+          
+          <p class="publication-meta">Zhang, Z.; Zhang, Q.; Wang, T.; Zhao, B.; Chen, B.; Wang, X.; Chun, J.; Zhang, T.; Wang, B.*; Huang, X.* <strong class="venue"><em>ACS Catal.</em> 2025, 15, 12684-12690</strong>. DOI: 10.1021/acscatal.5c03056</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1021/acscatal.5c03056" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-20.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>19. Steering oxygen-centred radicals with ground-state ene-reductases for enantioselective intermolecular hydroalkoxylations.</h3>
+          
+          <p class="publication-meta">Chen, B.; Zhang, Q.; Yu, J.; Zhao, B.; Ge, R.; Zhang, Z.; Luo, D.; Wang, B.*; Huang, X.* <strong class="venue"><em>Nat. Catal.</em> 2025, 8, 740-748</strong>. DOI: 10.1038/s41929-025-01372-z</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41929-025-01372-z" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-19.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>18. Electricity-driven enzymatic dynamic kinetic oxidation.</h3>
+          
+          <p class="publication-meta">Zhao, B.; Xu, Y.; Zhu, Q.; Liu, A.; Peng, X.; Zhang, T.; Yu, L.; Zhang, Y.; Huang, X.* <strong class="venue"><em>Nature</em> 2025, 643, 699-704</strong>. DOI: 10.1038/s41586-025-09178-6</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41586-025-09178-6" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by NSFC.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-18.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>17. Enantiodivergent radical alkylation by synergistic Lewis-acid-enzyme and photoredox catalysis.</h3>
+          
+          <p class="publication-meta">Zhang, J.; Zhang, Q.; Ge, R.; Liu, A.; Chen, B.; Zhang, Z.; Zhao, B.; Yu, J.; Zhao, Y.; Yu, L.; Cao, M.; Wang, B.*; Huang, X.* <strong class="venue"><em>Angew. Chem. Int. Ed.</em> 2025, 64, e202500338</strong></p>
+          <div class="publication-links">
+            <a href="https://onlinelibrary.wiley.com/doi/10.1002/anie.202500338" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-17.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>16. Recent advances in repurposing natural enzymes for new-to-nature asymmetric photobiotransformations.</h3>
+          
+          <p class="publication-meta">Liu, F.; Peng, X.; Yu, J.; Huang, X.* <strong class="venue"><em>Org. Chem. Front.</em> 2025, 12, 4608-4634</strong>. DOI: 10.1039/D5QO00470E</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1039/D5QO00470E" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-16.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>15. Enantioselective biosynthesis of vicinal diamines enabled by synergistic photo/biocatalysis consisting of an ene-reductase and a green-light-excited organic dye.</h3>
+          
+          <p class="publication-meta">Shi, F.; Chen, B.; Yu, J.; Zhu, R.; Zheng, Y.; Huang, X.* <strong class="venue"><em>Chin. J. Catal.</em> 2025, 68, 223-229</strong></p>
+          <div class="publication-links">
+            <a href="https://www.sciencedirect.com/science/article/pii/S1872206724601683" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-15.jpg" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>14. Single-electron oxidation triggered by visible-light-excited enzymes for asymmetric biocatalysis.</h3>
+          
+          <p class="publication-meta">Yu, J.; Chen, B.; Huang, X.* <strong class="venue"><em>Angew. Chem. Int. Ed.</em> 2025, e202419262</strong></p>
+          <div class="publication-links">
+            <a href="https://onlinelibrary.wiley.com/doi/10.1002/anie.202419262" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Minireview.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-14.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>13. Synergistic photobiocatalysis for enantioselective triple radical sorting.</h3>
+          
+          <p class="publication-meta">Xing, Z.; Liu, F.; Feng, J.; Yu, L.; Wu, Z.; Zhao, B.; Chen, B.; Ping, H.; Xu, Y.; Liu, A.; Zhao, Y.; Wang, C.; Wang, B.*; Huang, X.* <strong class="venue"><em>Nature</em> 2025, 637, 1118-1123</strong>. DOI: 10.1038/s41586-024-08399-5</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41586-024-08399-5" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by C&amp;EN, NSFC, and other outlets.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-13.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>12. Repurposing type I aldolase for stereospecific radical coupling with light.</h3>
+          
+          <p class="publication-meta">Yu, J.; Hao, Y.; Huang, X.* <strong class="venue"><em>Chem Catalysis</em> 2024, 4(11)</strong>. DOI: 10.1016/j.checat.2024.101191</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1016/j.checat.2024.101191" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Invited Preview.</p>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>11. Repurposing naturally occurring enzymes using visible light.</h3>
+          
+          <p class="publication-meta">Xu, Y.; Liu, F.; Zhao, B.; Huang, X.* <strong class="venue"><em>Chin. J. Chem.</em> 2024, 42, 3553-3558</strong>. DOI: 10.1002/cjoc.202400656</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1002/cjoc.202400656" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-11.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>10. Modular access to chiral amines via imine reductase-based photoenzymatic catalysis.</h3>
+          
+          <p class="publication-meta">Chen, B.; Li, R.; Feng, J.; Zhao, B.; Zhang, J.; Yu, J.; Xu, Y.; Xing, Z.; Zhao, Y.; Wang, B.*; Huang, X.* <strong class="venue"><em>J. Am. Chem. Soc.</em> 2024, 146, 14278-14286</strong>. DOI: 10.1021/jacs.4c03879</p>
+          <div class="publication-links">
+            <a href="https://pubs.acs.org/doi/10.1021/jacs.4c03879" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by Synfacts.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-10.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>9. Repurposing visible-light-excited ene-reductases for diastereo- and enantioselective lactones synthesis.</h3>
+          
+          <p class="publication-meta">Yu, J.; Zhang, Q.; Zhao, B.; Wang, T.; Zheng, Y.; Wang, B.*; Zhang, Y.*; Huang, X.* <strong class="venue"><em>Angew. Chem. Int. Ed.</em> 2024, 63, e202402673</strong></p>
+          <div class="publication-links">
+            <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.202402673" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-9.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>8. A light-driven enzymatic enantioselective radical acylation.</h3>
+          
+          <p class="publication-meta">Xu, Y.; Chen, H.; Yu, L.; Peng, X.; Zhang, J.; Xing, Z.; Bao, Y.; Liu, A.; Zhao, Y.; Tian, C.*; Liang, Y.*; Huang, X.* <strong class="venue"><em>Nature</em> 2024, 625, 74-78</strong>. DOI: 10.1038/s41586-023-06822-x</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41586-023-06822-x" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by NSFC, Nanjing University, and X-MOL.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-8.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>7. Focused rational iterative site-specific mutagenesis (FRISM): A powerful method for enzyme engineering.</h3>
+          
+          <p class="publication-meta">Bao, Y.; Xu, Y.; Huang, X.* <strong class="venue"><em>Mol. Catal.</em> 2024, 553, 113755</strong></p>
+          <div class="publication-links">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S2468823123008374" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Invited review in honour of Prof. Manfred T. Reetz.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-7.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>6. Photoenzymatic conversion of enamides to enantioenriched benzylic amines enabled by visible-light-induced single-electron reduction.</h3>
+          
+          <p class="publication-meta">Zhang, J.; Zhang, Q.; Chen, B.; Yu, J.; Wang, B.*; Huang, X.* <strong class="venue"><em>ACS Catal.</em> 2023, 13, 15682-15690</strong>. DOI: 10.1021/acscatal.3c04711</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1021/acscatal.3c04711" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-6.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>5. Direct visible-light-excited flavoproteins for redox-neutral asymmetric radical hydroarylation.</h3>
+          
+          <p class="publication-meta">Zhao, B.; Feng, J.; Yu, L.; Xing, Z.; Chen, B.; Liu, A.; Liu, F.; Shi, F.; Zhao, Y.; Tian, C.*; Wang, B.*; Huang, X.* <strong class="venue"><em>Nat. Catal.</em> 2023, 6, 996-1004</strong>. DOI: 10.1038/s41929-023-01024-0</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41929-023-01024-0" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-5.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>4. Rational evolution of a fatty acid photodecarboxylase for highly selective photodecarboxylation of trans fatty acid.</h3>
+          
+          <p class="publication-meta">Zeng, S.; Bao, Y.; Cao, A.; Huang, X.* <strong class="venue"><em>Univ. Chem.</em> 2023, 38, 1-10</strong></p>
+          <div class="publication-links">
+            <a href="http://www.dxhx.pku.edu.cn/CN/10.3866/PKU.DXHX202210002" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>3. Recent advances in photoenzymatic synthesis.</h3>
+          
+          <p class="publication-meta">Ming, Y.; Chen, B.; Huang, X.* <strong class="venue"><em>Synth. Biol. J.</em> 2022, 3, 1-25</strong></p>
+          <div class="publication-links">
+            <a href="https://synbioj.cip.com.cn/CN/10.12211/2096-8280.2022-056" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-3.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>2. Photoinduced chemomimetic biocatalysis for enantioselective intermolecular radical conjugate addition.</h3>
+          
+          <p class="publication-meta">Huang, X.; Feng, J.; Cui, J.; Jiang, G.; Harrison, W.; Zang, X.; Zhou, J.; Wang, B*.; Zhao, H.* <strong class="venue"><em>Nat. Catal.</em> 2022, 5, 586-593</strong>. DOI: 10.1038/s41929-022-00777-4</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1038/s41929-022-00777-4" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          <p class="publication-note">Highlighted by Nature Catalysis, X-MOL, and UIUC.</p>
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-2.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+        <article class="publication visual">
+          <h3>1. Photobiocatalysis for abiological transformations.</h3>
+          
+          <p class="publication-meta">Wesley, H.; Huang, X.; Zhao, H.* <strong class="venue"><em>Acc. Chem. Res.</em> 2022, 55, 1087-1096</strong>. DOI: 10.1021/acs.accounts.1c00719</p>
+          <div class="publication-links">
+            <a href="https://doi.org/10.1021/acs.accounts.1c00719" target="_blank" rel="noopener noreferrer">Paper Link</a>
+          </div>
+          
+          
+            <figure class="publication-figure">
+              <img src="/research/media/publications/pub-1.png" alt="Graphical abstract for publication 全部论文">
+            </figure>
+          
+        </article>
+      
+    </div>
+
+    <div class="publication-section-title prior-title">
+      <h2>Prior to NJU</h2>
+    </div>
+    <ol class="prior-publications">
+      <li>Huang, X.;&dagger; Wang, B.;&dagger; Wang, Y.; Jiang, G.; Feng, J.; Zhao, H.* Photoenzymatic enantioselective intermolecular radical hydroalkylation, <em>Nature</em> <strong>2020</strong>, 584, 69-74. (&dagger;Co-first author; highlighted by C&amp;EN and Synfacts)</li>
+      <li>Huang, X.; Cao, M.; Zhao, H.* Integrating biocatalysis with chemocatalysis for selective transformations, <em>Curr. Opin. Chem. Biol.</em> <strong>2020</strong>, 55, 161-170. Invited review.</li>
+      <li>Huang, X.; Meggers, E.* Asymmetric photocatalysis with bis-cyclometalated rhodium complexes, <em>Acc. Chem. Res.</em> <strong>2019</strong>, 52, 833-847.</li>
+      <li>Huang, X.; Zhang, Q.; Lin, J.; Harms, K.; Meggers, E.* Electricity driven asymmetric Lewis acid catalysis, <em>Nat. Catal.</em> <strong>2019</strong>, 2, 34-40.</li>
+      <li>Huang, X.; Lin, J.; Shen, T.; Harms, K.; Marchini, M.; Ceroni, P.; Meggers, E.* Asymmetric [3+2] photocycloadditions of cyclopropanes with alkenes or alkynes via visible light excitation of catalyst-bound substrates, <em>Angew. Chem. Int. Ed.</em> <strong>2018</strong>, 57, 5454-5458. Hot Paper.</li>
+      <li>Huang, X.; Li, X.; Xie, X.; Harms, K.; Riedel, R.; Meggers, E.* Catalytic asymmetric synthesis of a nitrogen heterocycle through stereocontrolled direct photoreaction from electronically excited state, <em>Nat. Commun.</em> <strong>2017</strong>, 8, 2245.</li>
+      <li>Huang, X.; Quinn, T. R.; Harms, K.; Webster, R. D.; Zhang, L.; Wiest, O.; Meggers, E.* Direct visible-light-excited asymmetric Lewis acid catalysis of intermolecular [2+2] photocycloadditions, <em>J. Am. Chem. Soc.</em> <strong>2017</strong>, 139, 9120-9123.</li>
+      <li>Huang, X.; Webster, R. D.; Harms, K.; Meggers, E.* Asymmetric catalysis with organic azides and diazo compounds initiated by photoinduced electron transfer, <em>J. Am. Chem. Soc.</em> <strong>2016</strong>, 138, 12636-12642.</li>
+      <li>Huang, X.; Li, X.; Zou, M.; Song, S.; Tang, C.; Yuan, Y.; Jiao, N.* From ketones to esters by a Cu-catalyzed highly selective C(CO)-C(alkyl) bond cleavage: aerobic oxidation and oxygenation with air, <em>J. Am. Chem. Soc.</em> <strong>2014</strong>, 136, 14858-14856.</li>
+      <li>Chen, F.;&dagger; Huang, X.;&dagger; Li, X.;&dagger; Shen, T.; Zou, M.; Jiao, N.* Dehydrogenative N-incorporation: a direct approach to quinoxaline N-oxides under mild conditions, <em>Angew. Chem. Int. Ed.</em> <strong>2014</strong>, 53, 10495-10499. (&dagger;Co-first author)</li>
+      <li>Huang, X.;&dagger; Luo, S.;&dagger; Burghaus, O.; Webster, R. D.; Harms, K.; Meggers, E.* <em>Chem. Sci.</em> <strong>2017</strong>, 8, 7126-7131. (&dagger;Co-first author)</li>
+      <li>Huo, H.;&dagger; Huang, X.;&dagger; Shen, X.; Harms, K.; Meggers, E.* <em>Synlett</em> <strong>2016</strong>, 27, 749-753. Invited paper; &dagger;Co-first author.</li>
+      <li>Huang, X.; Li, X.; Jiao, N.* <em>Chem. Sci.</em> <strong>2015</strong>, 6, 6355-6360.</li>
+      <li>Huang, X.; Li, X.; Zou, M.; Pan, J.; Jiao, N.* <em>Org. Chem. Front.</em> <strong>2015</strong>, 2, 354-359.</li>
+      <li>Huang, X.; Jiao, N.* <em>Org. Biomol. Chem.</em> <strong>2014</strong>, 12, 4324-4328.</li>
+      <li>Jung, H.; Hong, M.; Marchini, M.; Villa, M.; Steinlandt, P. S.; Huang, X.; Hemming, M.; Meggers, E.; Ceroni, P.;* Park, J.;* Baik, M.-H.* <em>Chem. Sci.</em> <strong>2021</strong>, DOI: 10.1039/D1SC02745J.</li>
+      <li>Wang, Y.; Huang, X.; Hui, J.; Vo, L. M.; Zhao, H.* <em>ACS Catal.</em> <strong>2020</strong>, 10, 9431-9437.</li>
+      <li>Kuang, Y.; Wang, K.; Shi, X.; Huang, X.; Meggers, E.; Wu, J. <em>Angew. Chem. Int. Ed.</em> <strong>2019</strong>, 58, 11028-11032.</li>
+      <li>Zhu, B.; Shen, T.; Huang, X.; Zhu, Y.; Song, S.; Jiao, N. <em>Angew. Chem. Int. Ed.</em> <strong>2019</strong>, 58, 11028-11032.</li>
+      <li>Grell, Y.; Hong, Y.; Huang, X.; Mochizuki, T.; Xie, X.; Harms, K.; Meggers, E. <em>Organometallics</em> <strong>2019</strong>, 38, 3948-3954.</li>
+      <li>Liu, J.; Qiu, X.; Huang, X.; Luo, X.; Zhang, C.; Wei, J.; Pan, J.; Liang, Y.; Zhu, Y.; Qin, Q.; Song, S.; Jiao, N. <em>Nat. Chem.</em> <strong>2019</strong>, 11, 71-77.</li>
+      <li>De Assis, F.; Huang, X.; Akiyama, M.; Pilli, R. A.; Meggers, E.* <em>J. Org. Chem.</em> <strong>2018</strong>, 83, 10922-10932.</li>
+      <li>Ma, J.; Zhang, X.; Huang, X.; Luo, S.; Meggers, E.* <em>Nat. Protoc.</em> <strong>2018</strong>, 13, 605-632.</li>
+      <li>Zhang, X.; Qin, J.; Huang, X.; Meggers, E.* <em>Eur. J. Org. Chem.</em> <strong>2018</strong>, 571-577.</li>
+      <li>Zhang, X.; Qin, J.; Huang, X.; Meggers, E.* <em>Org. Chem. Front.</em> <strong>2018</strong>, 5, 166-170.</li>
+      <li>Chen, S.; Huang, X.; Meggers, E.; Houk, K. N.* <em>J. Am. Chem. Soc.</em> <strong>2017</strong>, 139, 17902-17907.</li>
+      <li>Ma, J.; Rosales, A. R.; Huang, X.; Harms, K.; Riedel, R.; Wiest, O.; Meggers, E.* <em>J. Am. Chem. Soc.</em> <strong>2017</strong>, 139, 17245-17248.</li>
+      <li>Song, S.; Huang, X.; Liang, Y.-F.; Tang, C.; Li, X.; Jiao, N.* <em>Green Chem.</em> <strong>2015</strong>, 17, 2727-2731.</li>
+      <li>Shen, T.; Huang, X.; Liang, Y.-F.; Jiao, N.* <em>Org. Lett.</em> <strong>2015</strong>, 17, 6186-6189.</li>
+      <li>Zhu, Y.; Li, X.; Wang, X.; Huang, X.; Shen, T.; Zhang, Y.; Sun, X.; Zou, M.; Song, S.; Jiao, N.* <em>Org. Lett.</em> <strong>2015</strong>, 17, 4702-4705.</li>
+      <li>Liang, Y.-F.; Wu, K.; Song, S.; Li, X.; Huang, X.; Jiao, N.* <em>Org. Lett.</em> <strong>2015</strong>, 17, 876-879.</li>
+      <li>Li, Z.; Huang, X.; Chen, F.; Zhang, C.; Wang, X.; Jiao, N.* <em>Org. Lett.</em> <strong>2015</strong>, 17, 584-587.</li>
+      <li>Chen, F.; Huang, X.; Cui, Y.; Jiao, N.* <em>Chem. Eur. J.</em> <strong>2013</strong>, 19, 11199-11202.</li>
+    </ol>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-grid">
+      <div>
+        <h2>The Huang Group</h2>
+        <p>School of Chemistry, Nanjing University</p>
+        <p>Xianlin Campus, Nanjing, China</p>
+        <p>Email: <a href="mailto:huangx513@nju.edu.cn">huangx513@nju.edu.cn</a></p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <div class="footer-links">
+          <a href="/research/research/">Research</a>
+          <a href="/research/publications/">Publications</a>
+          <a href="/research/people/">People</a>
+          <a href="/research/huang/">Xiaoqiang Huang</a>
+          <a href="/research/contact/">Contact</a>
+        </div>
+        <p style="margin-top:1.2rem;">© 2026 The Huang Group. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

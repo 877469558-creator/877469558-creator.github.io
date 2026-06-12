@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Presentations on </title>
-    <link>https://877469558-creator.github.io/presentations/</link>
-    <description>Recent content in Presentations on </description>
+    <title>Presentations on The Huang Group</title>
+    <link>https://877469558-creator.github.io/research/presentations/</link>
+    <description>Recent content in Presentations on The Huang Group</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://877469558-creator.github.io/presentations/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://877469558-creator.github.io/research/presentations/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
