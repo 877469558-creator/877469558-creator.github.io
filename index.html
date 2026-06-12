@@ -193,7 +193,7 @@
     .section-title {
       margin: 0;
       color: var(--ink);
-      font-size: clamp(1.7rem, 3vw, 2.65rem);
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
       line-height: 1.12;
       letter-spacing: 0;
       overflow-wrap: anywhere;
@@ -431,7 +431,7 @@
     .hero-copy h1 {
       margin: 0;
       max-width: 1320px;
-      font-size: clamp(1.85rem, 2.45vw, 2.75rem);
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
       line-height: 1.12;
       letter-spacing: 0;
       white-space: nowrap;
@@ -530,8 +530,8 @@
       max-width: 850px;
       margin: 0;
       color: var(--ink);
-      font-size: clamp(2.25rem, 5vw, 4.5rem);
-      line-height: 1.02;
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
+      line-height: 1.12;
       letter-spacing: 0;
       overflow-wrap: anywhere;
     }
@@ -730,14 +730,15 @@
     .home-research-simple {
       position: relative;
       z-index: 1;
-      max-width: 900px;
+      max-width: 1180px;
       text-align: center;
     }
 
-    .home-research-simple .section-title {
+    .home-research-simple .section-title,
+    .home-news .section-title {
       color: var(--dark-text);
-      font-size: 4rem;
-      line-height: 1;
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
+      line-height: 1.12;
       text-transform: uppercase;
     }
 
@@ -759,18 +760,20 @@
     }
 
     .home-research-simple .section-lede {
-      max-width: 780px;
+      max-width: 1180px;
       margin-right: auto;
       margin-left: auto;
       color: var(--dark-text);
       font-size: 1.25rem;
       line-height: 1.72;
+      white-space: nowrap;
     }
 
     .home-research-simple .section-lede.secondary {
       margin-top: 0.2rem;
       color: var(--dark-muted);
       font-size: 1.08rem;
+      white-space: nowrap;
     }
 
     .research-mini-flow {
@@ -831,8 +834,8 @@
 
     .home-research-copy .section-title {
       max-width: 820px;
-      font-size: 3.1rem;
-      line-height: 1.08;
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
+      line-height: 1.12;
     }
 
     .home-research-copy .section-lede {
@@ -999,8 +1002,8 @@
 
     .profile-body h2 {
       margin: 0;
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      line-height: 1.1;
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
+      line-height: 1.12;
       overflow-wrap: anywhere;
     }
 
@@ -1369,11 +1372,11 @@
     }
 
     .research-hero-copy h1 {
-      max-width: 900px;
+      max-width: 1120px;
       margin: 0;
       color: var(--dark-text);
-      font-size: clamp(2.35rem, 4.6vw, 4.25rem);
-      line-height: 1.04;
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
+      line-height: 1.12;
       letter-spacing: 0;
     }
 
@@ -2021,6 +2024,15 @@
       z-index: 1;
     }
 
+    .page-hero h1 {
+      margin: 0;
+      color: var(--dark-text);
+      font-size: clamp(1.75rem, 2.1vw, 2.35rem);
+      line-height: 1.12;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
     .page-hero .section-title,
     .page-hero .section-lede {
       color: var(--dark-text);
@@ -2232,7 +2244,7 @@
       }
 
       .hero-copy h1 {
-        font-size: clamp(1.95rem, 6vw, 2.8rem);
+        font-size: clamp(1.75rem, 2.1vw, 2.35rem);
         white-space: normal;
       }
 
@@ -2250,12 +2262,24 @@
         opacity: 0.08;
       }
 
-      .home-research-simple .section-title {
-        font-size: 3.2rem;
+      .home-research-simple .section-title,
+      .home-news .section-title,
+      .research-hero-copy h1,
+      .page-hero h1,
+      .page-hero .section-title,
+      .profile-body h2,
+      .research-spotlight-copy h1 {
+        font-size: clamp(1.75rem, 2.1vw, 2.35rem);
+        line-height: 1.12;
+      }
+
+      .home-research-simple .section-lede,
+      .home-research-simple .section-lede.secondary {
+        white-space: normal;
       }
 
       .home-research-copy .section-title {
-        font-size: 2.45rem;
+        font-size: clamp(1.75rem, 2.1vw, 2.35rem);
       }
 
       .home-research-visual {
@@ -2304,7 +2328,7 @@
       }
 
       .hero-copy h1 {
-        font-size: clamp(1.68rem, 6.5vw, 2.1rem);
+        font-size: clamp(1.6rem, 6vw, 1.95rem);
         line-height: 1.12;
       }
 
@@ -2343,16 +2367,23 @@
       }
 
       .research-spotlight-copy h1 {
-        font-size: clamp(2.25rem, 11vw, 3.25rem);
+        font-size: clamp(1.6rem, 6vw, 1.95rem);
       }
 
       .home-research-copy .section-title {
-        font-size: 2rem;
+        font-size: clamp(1.6rem, 6vw, 1.95rem);
         line-height: 1.12;
       }
 
-      .home-research-simple .section-title {
-        font-size: 2.65rem;
+      .home-research-simple .section-title,
+      .home-news .section-title,
+      .research-hero-copy h1,
+      .page-hero h1,
+      .page-hero .section-title,
+      .profile-body h2,
+      .research-spotlight-copy h1 {
+        font-size: clamp(1.6rem, 6vw, 1.95rem);
+        line-height: 1.12;
       }
 
       .home-research-copy .section-lede {
@@ -2362,10 +2393,12 @@
       .home-research-simple .section-lede {
         font-size: 1.05rem;
         line-height: 1.62;
+        white-space: normal;
       }
 
       .home-research-simple .section-lede.secondary {
         font-size: 0.98rem;
+        white-space: normal;
       }
 
       .research-mini-flow {
@@ -2528,7 +2561,7 @@
       <span>Light</span>
       <i>+</i>
       <span>Electricity</span>
-      <b aria-hidden="true">→</b>
+      <b aria-hidden="true">&rarr;</b>
       <span>Chiral molecules</span>
     </div>
     <a class="button" href="/research/research/">View research</a>
@@ -2541,7 +2574,7 @@
   </div>
 </section>
 
-<section class="band">
+<section class="band home-news">
   <div class="wrap two-column">
     <div>
       <p class="section-kicker">News</p>
