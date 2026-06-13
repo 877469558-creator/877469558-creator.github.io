@@ -2,48 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://877469558-creator.github.io/</loc>
-    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://877469558-creator.github.io/publications/</loc>
-    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://877469558-creator.github.io/research/</loc>
     <lastmod>2026-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/experience/</loc>
+    <loc>https://877469558-creator.github.io/research/publications/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://877469558-creator.github.io/research/research/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://877469558-creator.github.io/research/experience/</loc>
     <lastmod>2023-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/publications/preprint/</loc>
+    <loc>https://877469558-creator.github.io/research/publications/preprint/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/publication_types/article/</loc>
+    <loc>https://877469558-creator.github.io/research/publication_types/article/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/tags/large-language-models/</loc>
+    <loc>https://877469558-creator.github.io/research/tags/large-language-models/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/publication_types/</loc>
+    <loc>https://877469558-creator.github.io/research/publication_types/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/tags/</loc>
+    <loc>https://877469558-creator.github.io/research/tags/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/publications/journal-article/</loc>
+    <loc>https://877469558-creator.github.io/research/publications/journal-article/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/publication_types/article-journal/</loc>
+    <loc>https://877469558-creator.github.io/research/publication_types/article-journal/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/tags/source-themes/</loc>
+    <loc>https://877469558-creator.github.io/research/tags/source-themes/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/publications/conference-paper/</loc>
+    <loc>https://877469558-creator.github.io/research/publications/conference-paper/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/publication_types/paper-conference/</loc>
+    <loc>https://877469558-creator.github.io/research/publication_types/paper-conference/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://877469558-creator.github.io/members/</loc>
+    <loc>https://877469558-creator.github.io/research/contact/</loc>
+  </url><url>
+    <loc>https://877469558-creator.github.io/research/people/</loc>
+  </url><url>
+    <loc>https://877469558-creator.github.io/research/presentations/</loc>
+  </url><url>
+    <loc>https://877469558-creator.github.io/research/huang/</loc>
   </url>
 </urlset>
