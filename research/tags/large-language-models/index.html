@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Huang Group at the School of Chemistry and Chemical Engineering, Nanjing University develops new-to-nature biocatalytic systems at the interface of enzyme engineering, visible-light catalysis, electrochemistry, and synthetic chemistry.">
+  <meta name="description" content="The Huang Group at the School of Chemistry, Nanjing University develops new-to-nature biocatalytic systems at the interface of enzyme engineering, visible-light catalysis, electrochemistry, and synthetic chemistry.">
   <title>Large Language Models | The Huang Group</title>
   <style>
     :root {
@@ -926,20 +926,21 @@
     }
 
     .home-research-simple .section-lede {
-      max-width: 1180px;
+      max-width: min(1120px, calc(100vw - 80px));
       margin-right: auto;
       margin-left: auto;
       color: var(--dark-text);
       font-size: 1.25rem;
       line-height: 1.72;
-      white-space: nowrap;
+      white-space: normal;
+      overflow-wrap: normal;
     }
 
     .home-research-simple .section-lede.secondary {
       margin-top: 0.2rem;
       color: var(--dark-muted);
       font-size: 1.08rem;
-      white-space: nowrap;
+      white-space: normal;
     }
 
     .research-mini-flow {
@@ -1635,6 +1636,18 @@
       background: #fff;
     }
 
+    .research-image-card {
+      padding: 0;
+      min-height: 0;
+      background: rgba(7, 18, 29, 0.94);
+    }
+
+    .research-image-card img {
+      aspect-ratio: 3 / 2;
+      border-radius: 8px;
+      background: #07121d;
+    }
+
     .research-hero-card figcaption {
       margin-top: 0.75rem;
       color: #46535a;
@@ -2046,6 +2059,19 @@
       background: #fff;
     }
 
+    .topic-card .direction-image {
+      padding: 0;
+      margin-bottom: 1rem;
+      background: rgba(7, 18, 29, 0.94);
+    }
+
+    .topic-card .direction-image img {
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: contain;
+      background: #07121d;
+    }
+
     .topic-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -2207,6 +2233,27 @@
 
     .side-note p {
       color: var(--muted);
+    }
+
+    .contact-map-band {
+      padding-top: 0;
+    }
+
+    .map-frame {
+      overflow: hidden;
+      min-height: 420px;
+      border: 1px solid var(--dark-line);
+      border-radius: 8px;
+      background: var(--dark-2);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+    }
+
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 460px;
+      border: 0;
+      filter: saturate(0.92) contrast(0.96);
     }
 
     .timeline {
@@ -2802,6 +2849,14 @@
         max-height: 185px;
       }
 
+      .map-frame {
+        min-height: 320px;
+      }
+
+      .map-frame iframe {
+        height: 340px;
+      }
+
       .nature-card img,
       .topic-card img {
         height: 150px;
@@ -2875,8 +2930,7 @@
     <div class="wrap footer-grid">
       <div>
         <h2>The Huang Group</h2>
-        <p>School of Chemistry and Chemical Engineering</p>
-        <p>Nanjing University</p>
+        <p>School of Chemistry, Nanjing University</p>
         <p>Xianlin Campus, Nanjing 210023, China</p>
         <p><strong>Email:</strong> <a href="mailto:huangx513@nju.edu.cn">huangx513@nju.edu.cn</a></p>
         <p>&copy; 2026 The Huang Group, Nanjing University</p>

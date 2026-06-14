@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Huang Group at the School of Chemistry and Chemical Engineering, Nanjing University develops new-to-nature biocatalytic systems at the interface of enzyme engineering, visible-light catalysis, electrochemistry, and synthetic chemistry.">
+  <meta name="description" content="The Huang Group at the School of Chemistry, Nanjing University develops new-to-nature biocatalytic systems at the interface of enzyme engineering, visible-light catalysis, electrochemistry, and synthetic chemistry.">
   <title>Research | The Huang Group</title>
   <style>
     :root {
@@ -926,20 +926,21 @@
     }
 
     .home-research-simple .section-lede {
-      max-width: 1180px;
+      max-width: min(1120px, calc(100vw - 80px));
       margin-right: auto;
       margin-left: auto;
       color: var(--dark-text);
       font-size: 1.25rem;
       line-height: 1.72;
-      white-space: nowrap;
+      white-space: normal;
+      overflow-wrap: normal;
     }
 
     .home-research-simple .section-lede.secondary {
       margin-top: 0.2rem;
       color: var(--dark-muted);
       font-size: 1.08rem;
-      white-space: nowrap;
+      white-space: normal;
     }
 
     .research-mini-flow {
@@ -1635,6 +1636,18 @@
       background: #fff;
     }
 
+    .research-image-card {
+      padding: 0;
+      min-height: 0;
+      background: rgba(7, 18, 29, 0.94);
+    }
+
+    .research-image-card img {
+      aspect-ratio: 3 / 2;
+      border-radius: 8px;
+      background: #07121d;
+    }
+
     .research-hero-card figcaption {
       margin-top: 0.75rem;
       color: #46535a;
@@ -2046,6 +2059,19 @@
       background: #fff;
     }
 
+    .topic-card .direction-image {
+      padding: 0;
+      margin-bottom: 1rem;
+      background: rgba(7, 18, 29, 0.94);
+    }
+
+    .topic-card .direction-image img {
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: contain;
+      background: #07121d;
+    }
+
     .topic-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -2207,6 +2233,27 @@
 
     .side-note p {
       color: var(--muted);
+    }
+
+    .contact-map-band {
+      padding-top: 0;
+    }
+
+    .map-frame {
+      overflow: hidden;
+      min-height: 420px;
+      border: 1px solid var(--dark-line);
+      border-radius: 8px;
+      background: var(--dark-2);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+    }
+
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 460px;
+      border: 0;
+      filter: saturate(0.92) contrast(0.96);
     }
 
     .timeline {
@@ -2802,6 +2849,14 @@
         max-height: 185px;
       }
 
+      .map-frame {
+        min-height: 320px;
+      }
+
+      .map-frame iframe {
+        height: 340px;
+      }
+
       .nature-card img,
       .topic-card img {
         height: 150px;
@@ -2857,14 +2912,9 @@
         <span>Directed evolution</span>
       </div>
     </div>
-    <div class="research-hero-card concept-visual hero-concept" aria-label="Synthetic biology and synthetic chemistry concept diagram">
-      <div class="bio-cell"></div>
-      <div class="enzyme-pocket"></div>
-      <div class="chem-ring"></div>
-      <div class="light-beam"></div>
-      <div class="electron-bolt"></div>
-      <p>Synthetic biology × synthetic chemistry</p>
-    </div>
+    <figure class="research-hero-card research-image-card">
+      <img src="/research/media/research/research-overview.png" alt="Synthetic biology and synthetic chemistry concept diagram">
+    </figure>
   </div>
 </section>
 
@@ -2909,13 +2959,9 @@
 
     <div class="topic-grid">
       <article class="topic-card">
-        <div class="direction-visual enzyme-visual" aria-label="Biocatalysis and enzyme engineering visual">
-          <span class="protein-loop loop-a"></span>
-          <span class="protein-loop loop-b"></span>
-          <span class="active-site"></span>
-          <span class="mutation-dot dot-a"></span>
-          <span class="mutation-dot dot-b"></span>
-        </div>
+        <figure class="direction-image">
+          <img src="/research/media/research/photoenzymatic-radical-catalysis.png" alt="Photoenzymatic radical catalysis illustration">
+        </figure>
         <span class="research-number">Direction 01</span>
         <h3>Photoenzymatic radical catalysis</h3>
         <p>Using visible light to unlock radical reactivity within enzyme active sites.</p>
@@ -2926,13 +2972,9 @@
       </article>
 
       <article class="topic-card">
-        <div class="direction-visual photoelectro-visual" aria-label="Asymmetric photoelectrochemistry visual">
-          <span class="sun-core"></span>
-          <span class="electrode left"></span>
-          <span class="electrode right"></span>
-          <span class="electron-path"></span>
-          <span class="chiral-product"></span>
-        </div>
+        <figure class="direction-image">
+          <img src="/research/media/research/electroenzymatic-asymmetric-synthesis.png" alt="Electroenzymatic asymmetric synthesis illustration">
+        </figure>
         <span class="research-number">Direction 02</span>
         <h3>Electroenzymatic asymmetric synthesis</h3>
         <p>Using electrochemical redox control to drive selective enzymatic transformations.</p>
@@ -2943,13 +2985,9 @@
       </article>
 
       <article class="topic-card">
-        <div class="direction-visual artificial-enzyme-visual" aria-label="Artificial enzyme and biomimetic catalysis visual">
-          <span class="scaffold"></span>
-          <span class="metal-center"></span>
-          <span class="substrate one"></span>
-          <span class="substrate two"></span>
-          <span class="catalytic-arrow"></span>
-        </div>
+        <figure class="direction-image">
+          <img src="/research/media/research/protein-engineering-directed-evolution.png" alt="Protein engineering and directed evolution illustration">
+        </figure>
         <span class="research-number">Direction 03</span>
         <h3>Protein engineering and directed evolution</h3>
         <p>Redesigning enzymes to tune activity, substrate scope, and stereochemical outcomes.</p>
@@ -2960,14 +2998,9 @@
       </article>
 
       <article class="topic-card">
-        <div class="direction-visual cell-factory-visual" aria-label="Microbial cell factory visual">
-          <span class="cell-body"></span>
-          <span class="dna-strand"></span>
-          <span class="pathway-node n1"></span>
-          <span class="pathway-node n2"></span>
-          <span class="pathway-node n3"></span>
-          <span class="product-drop"></span>
-        </div>
+        <figure class="direction-image">
+          <img src="/research/media/research/synthetic-biology-cell-factories.png" alt="Synthetic biology and cell factories illustration">
+        </figure>
         <span class="research-number">Direction 04</span>
         <h3>Synthetic biology and cell factories</h3>
         <p>Combining new-to-nature biocatalysis with engineered biosynthetic pathways.</p>
@@ -2993,8 +3026,7 @@
     <div class="wrap footer-grid">
       <div>
         <h2>The Huang Group</h2>
-        <p>School of Chemistry and Chemical Engineering</p>
-        <p>Nanjing University</p>
+        <p>School of Chemistry, Nanjing University</p>
         <p>Xianlin Campus, Nanjing 210023, China</p>
         <p><strong>Email:</strong> <a href="mailto:huangx513@nju.edu.cn">huangx513@nju.edu.cn</a></p>
         <p>&copy; 2026 The Huang Group, Nanjing University</p>
