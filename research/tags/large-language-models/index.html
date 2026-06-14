@@ -112,8 +112,8 @@
     .brand {
       display: inline-flex;
       flex-direction: row;
-      align-items: flex-start;
-      gap: 0;
+      align-items: center;
+      gap: 0.78rem;
       color: #fff;
       text-decoration: none;
       font-family: var(--title-font);
@@ -129,6 +129,14 @@
     .brand-word {
       display: block;
       text-transform: uppercase;
+    }
+
+    .brand-emblem {
+      display: none;
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      flex: 0 0 auto;
     }
 
     .brand-symbol {
@@ -887,7 +895,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / 70% auto no-repeat;
+      background: url("/media/home-protein-bg.png") center / 70% auto no-repeat;
       opacity: 0.1;
       filter: saturate(0.85);
       pointer-events: none;
@@ -1572,7 +1580,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      background: url("/media/home-protein-bg.png") center / cover no-repeat;
       opacity: 0.24;
       filter: saturate(0.95) contrast(1.02);
     }
@@ -2112,7 +2120,8 @@
       text-align: center;
     }
 
-    .member-initial {
+    .member-initial,
+    .member-photo {
       display: inline-flex;
       width: clamp(132px, 14vw, 190px);
       height: clamp(132px, 14vw, 190px);
@@ -2121,22 +2130,25 @@
       border-radius: 50%;
       border: 1px solid rgba(214, 232, 236, 0.34);
       color: transparent;
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.18), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
+      background-position: center;
+      background-size: cover;
+      object-fit: cover;
       box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.025), 0 18px 40px rgba(0, 0, 0, 0.16);
       font-size: 0;
       font-weight: 850;
     }
 
     .member-card:nth-child(3n + 2) .member-initial {
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(142, 231, 240, 0.18), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
     }
 
     .member-card:nth-child(3n) .member-initial {
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(229, 196, 111, 0.16), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
     }
@@ -2203,6 +2215,17 @@
       break-inside: avoid;
       margin: 0 0 0.55rem;
       color: var(--muted);
+    }
+
+    .alumni-name,
+    .alumni-destination {
+      display: block;
+    }
+
+    .alumni-destination {
+      margin-top: 0.1rem;
+      color: var(--dark-muted);
+      font-size: 0.88rem;
     }
 
     .page-hero {
@@ -2329,7 +2352,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      background: url("/media/home-protein-bg.png") center / cover no-repeat;
       filter: saturate(0.9) contrast(0.98);
       opacity: 0.28;
     }
@@ -2378,7 +2401,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      background: url("/media/home-protein-bg.png") center / cover no-repeat;
       opacity: 0.23;
       filter: saturate(0.95);
     }
@@ -2556,6 +2579,377 @@
       font-family: var(--title-font);
       font-weight: 850;
       letter-spacing: 0;
+    }
+
+     
+    body {
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    a {
+      color: #245b74;
+    }
+
+    a:hover {
+      color: var(--violet);
+    }
+
+    .site-header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e7eceb;
+      box-shadow: 0 2px 14px rgba(24, 33, 38, 0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand,
+    .main-nav a {
+      color: var(--ink);
+      text-shadow: none;
+    }
+
+    .brand small {
+      color: var(--muted);
+    }
+
+    .main-nav a:hover,
+    .main-nav a.is-active {
+      background: #eef2f1;
+      color: var(--ink);
+    }
+
+    .hero-band {
+      background: #07111c;
+      border-bottom: 1px solid #e7eceb;
+    }
+
+    .hero-band::before,
+    .hero-band::after {
+      background: transparent;
+      z-index: 1;
+    }
+
+    .hero-video {
+      filter: none;
+      opacity: 1;
+    }
+
+    .hero-energy {
+      z-index: 2;
+      mix-blend-mode: screen;
+      opacity: 1;
+    }
+
+    .light-orb.primary {
+      background: radial-gradient(circle, rgba(0, 189, 211, 0.7) 0, rgba(44, 180, 210, 0.36) 34%, rgba(44, 180, 210, 0.12) 62%, transparent 74%);
+      opacity: 1;
+      filter: blur(8px) drop-shadow(0 0 34px rgba(0, 177, 205, 0.58));
+    }
+
+    .light-orb.secondary {
+      background: radial-gradient(circle, rgba(232, 172, 48, 0.74) 0, rgba(232, 172, 48, 0.36) 38%, rgba(232, 172, 48, 0.12) 64%, transparent 76%);
+      opacity: 0.96;
+      filter: blur(8px) drop-shadow(0 0 30px rgba(200, 164, 93, 0.56));
+    }
+
+    .bolt {
+      opacity: 0.92;
+      background: linear-gradient(180deg, rgba(23, 120, 160, 1), rgba(18, 151, 192, 0.96) 44%, rgba(187, 133, 28, 0.98));
+      filter: drop-shadow(0 0 10px rgba(36, 132, 166, 0.72)) drop-shadow(0 0 22px rgba(200, 164, 93, 0.52));
+    }
+
+    .spark {
+      opacity: 0.96;
+      background: linear-gradient(90deg, transparent, rgba(20, 139, 178, 1), rgba(193, 143, 31, 0.96), transparent);
+      filter: drop-shadow(0 0 10px rgba(36, 132, 166, 0.58));
+    }
+
+    .hero-copy h1,
+    .hero-lede,
+    .hero-scroll {
+      color: #ffffff;
+      text-shadow: 0 2px 14px rgba(2, 8, 18, 0.62);
+    }
+
+    .hero-lede {
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .hero-scroll {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .hero-scroll:hover {
+      color: #ffffff;
+    }
+
+    .band,
+    .band.tint,
+    .home-research,
+    .home-publications,
+    .research-hero,
+    .page-hero,
+    .research-spotlight {
+      background: #ffffff;
+      color: var(--ink);
+      border-color: #e7eceb;
+    }
+
+    .home-research {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(142, 231, 240, 0.08), transparent 38%),
+        #ffffff;
+    }
+
+    .home-research::before,
+    .research-hero::before,
+    .page-hero::before,
+    .research-spotlight::before {
+      opacity: 0.04;
+      filter: invert(1) hue-rotate(180deg) saturate(0.8);
+    }
+
+    .research-hero::after,
+    .page-hero::after,
+    .research-spotlight::after {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.96));
+    }
+
+    .section-title,
+    .home-research-simple .section-title,
+    .home-news .section-title,
+    .research-hero-copy h1,
+    .page-hero h1,
+    .page-hero .section-title,
+    .profile-body h2,
+    .member-section h2,
+    .signature-item h2,
+    .focus-item h3,
+    .research-card h3,
+    .platform-item h3,
+    .direction-copy h3,
+    .side-note h3 {
+      color: var(--ink);
+    }
+
+    .section-lede,
+    .home-research-simple .section-lede,
+    .home-research-simple .section-lede.secondary,
+    .page-hero .section-lede,
+    .profile-body p,
+    .signature-item p,
+    .focus-item p,
+    .research-card p,
+    .platform-item p,
+    .direction-copy p,
+    .side-note p,
+    .paper-note,
+    .alumni-list li,
+    .timeline li {
+      color: var(--muted);
+    }
+
+    .home-research-simple .section-lede:first-of-type,
+    .research-hero-copy .section-lede:first-of-type {
+      color: var(--ink);
+    }
+
+    .research-mini-flow span,
+    .research-keywords span,
+    .compact-axis span,
+    .research-axis span,
+    .contact-list a,
+    .contact-list span,
+    .publication-links a,
+    .publication-links span,
+    .button {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      color: var(--ink);
+      box-shadow: 0 8px 20px rgba(24, 33, 38, 0.06);
+    }
+
+    .research-mini-flow span,
+    .research-keywords span,
+    .compact-axis span {
+      background: #f7f9f8;
+    }
+
+    .button:hover,
+    .home-research-simple .button:hover,
+    .home-research-copy .button:hover,
+    .publication-links a:hover {
+      color: var(--ink);
+      border-color: rgba(111, 0, 93, 0.28);
+      background: #f7f1f6;
+    }
+
+    .home-research-simple .button,
+    .home-research-copy .button {
+      color: var(--ink);
+      background: #ffffff;
+      border-color: #dfe7e5;
+      box-shadow: 0 8px 20px rgba(24, 33, 38, 0.06);
+    }
+
+    .focus-item,
+    .research-card,
+    .member-card,
+    .platform-item,
+    .news-item,
+    .signature-item,
+    .direction-panel,
+    .profile-feature,
+    .publication,
+    .research-hero-card,
+    .research-spotlight-figure,
+    .nature-card figure,
+    .topic-card figure,
+    .map-frame {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      color: var(--ink);
+      box-shadow: 0 14px 34px rgba(24, 33, 38, 0.08);
+    }
+
+    .member-card {
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .member-name,
+    .publication .venue,
+    .site-footer strong {
+      color: var(--ink);
+    }
+
+    .member-role,
+    .member-meta,
+    .alumni-destination,
+    .publication p,
+    .site-footer p {
+      color: var(--muted);
+    }
+
+    .people-tabs {
+      background: #ffffff;
+      border-block: 1px solid #e7eceb;
+    }
+
+    .people-tabs a,
+    .people-tabs span {
+      color: var(--muted);
+    }
+
+    .people-tabs a:hover,
+    .people-tabs a:first-child {
+      color: var(--ink);
+    }
+
+    .profile-photo {
+      background: #f7f9f8;
+      border-color: #dfe7e5;
+      box-shadow: 0 14px 34px rgba(24, 33, 38, 0.08);
+    }
+
+    .profile-role,
+    .section-kicker,
+    .research-number,
+    .news-date,
+    .timeline strong {
+      color: #9a7832;
+    }
+
+    .timeline li {
+      border-left-color: #dfe7e5;
+    }
+
+    .map-frame {
+      background: #ffffff;
+    }
+
+    .map-frame iframe {
+      filter: none;
+    }
+
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px solid #e7eceb;
+      color: var(--muted);
+    }
+
+    .site-footer a {
+      color: var(--ink);
+    }
+
+    .brand-emblem {
+      display: block;
+      filter: drop-shadow(0 1px 2px rgba(24, 33, 38, 0.12));
+    }
+
+    .concept-step h3,
+    .publication-section-title h2,
+    .publication-year-heading,
+    .filter-row strong,
+    .publication-filters,
+    .publication.visual h3 {
+      color: var(--ink);
+    }
+
+    .concept-step p,
+    .filter-row button,
+    .prior-publications li {
+      color: #52616a;
+    }
+
+    .concept-step {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(24, 33, 38, 0.08);
+    }
+
+    .concept-step::after {
+      background: linear-gradient(90deg, #c8a45d, #8ecfd8);
+    }
+
+    .publication-filters {
+      color: var(--ink);
+    }
+
+    .filter-row button {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      color: #52616a;
+    }
+
+    .filter-row button:hover,
+    .filter-row button.is-active {
+      color: var(--ink);
+      border-color: rgba(200, 164, 93, 0.8);
+      background: #fff8e7;
+    }
+
+    .concept-step h3 {
+      color: #182126;
+    }
+
+    .concept-step p {
+      color: #50606a;
+    }
+
+    .publication-section-title h2,
+    .publication-year-heading {
+      color: #182126;
+    }
+
+    .filter-row strong {
+      color: #182126;
+    }
+
+    .publication-section-title {
+      border-color: #dfe7e5;
+      background: #f7f9f8;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -2885,16 +3279,17 @@
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
-      <a class="brand" href="/research/">
+      <a class="brand" href="/">
+        <img class="brand-emblem" src="/media/nju-emblem.png" alt="Nanjing University emblem">
         <span class="brand-word">HUANG GROUP</span>
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
-        <a href="/research/" class="">Home</a>
-        <a href="/research/research/" class="">Research</a>
-        <a href="/research/publications/" class="">Publications</a>
-        <a href="/research/people/" class="">People</a>
-        <a href="/research/huang/" class="">Xiaoqiang Huang</a>
-        <a href="/research/contact/" class="">Contact</a>
+        <a href="/" class="">Home</a>
+        <a href="/research/" class="">Research</a>
+        <a href="/publications/" class="">Publications</a>
+        <a href="/people/" class="">People</a>
+        <a href="/huang/" class="">Xiaoqiang Huang</a>
+        <a href="/contact/" class="">Contact</a>
       </nav>
     </div>
   </header>
@@ -2912,12 +3307,12 @@
     <div class="publication-list">
       
         <article class="publication">
-          <h3><a href="/research/publications/preprint/">An example preprint / working paper</a></h3>
+          <h3><a href="/publications/preprint/">An example preprint / working paper</a></h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.</p>
         </article>
       
         <article class="publication">
-          <h3><a href="/research/publications/conference-paper/">An example conference paper</a></h3>
+          <h3><a href="/publications/conference-paper/">An example conference paper</a></h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.</p>
         </article>
       
