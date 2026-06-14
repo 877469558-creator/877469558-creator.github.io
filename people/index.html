@@ -2112,7 +2112,8 @@
       text-align: center;
     }
 
-    .member-initial {
+    .member-initial,
+    .member-photo {
       display: inline-flex;
       width: clamp(132px, 14vw, 190px);
       height: clamp(132px, 14vw, 190px);
@@ -2121,22 +2122,25 @@
       border-radius: 50%;
       border: 1px solid rgba(214, 232, 236, 0.34);
       color: transparent;
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.18), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
+      background-position: center;
+      background-size: cover;
+      object-fit: cover;
       box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.025), 0 18px 40px rgba(0, 0, 0, 0.16);
       font-size: 0;
       font-weight: 850;
     }
 
     .member-card:nth-child(3n + 2) .member-initial {
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(142, 231, 240, 0.18), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
     }
 
     .member-card:nth-child(3n) .member-initial {
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(229, 196, 111, 0.16), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
     }
@@ -2203,6 +2207,17 @@
       break-inside: avoid;
       margin: 0 0 0.55rem;
       color: var(--muted);
+    }
+
+    .alumni-name,
+    .alumni-destination {
+      display: block;
+    }
+
+    .alumni-destination {
+      margin-top: 0.1rem;
+      color: var(--dark-muted);
+      font-size: 0.88rem;
     }
 
     .page-hero {
@@ -2900,6 +2915,7 @@
   </header>
   <main id="content">
     
+
 <section class="page-hero">
   <div class="wrap">
     <p class="section-kicker">People</p>
@@ -2918,61 +2934,323 @@
 
 <section class="band tint" id="current-members">
   <div class="wrap">
-    <section class="member-section">
-      <h2>Postdoctoral Fellows</h2>
-      <div class="member-grid">
-        <article class="member-card"><span class="member-initial">JY</span><p class="member-name">Jinhai Yu</p><p class="member-role">Postdoctoral Fellow</p></article>
-        <article class="member-card"><span class="member-initial">BC</span><p class="member-name">Bin Chen</p><p class="member-role">Postdoctoral Fellow</p></article>
-        <article class="member-card"><span class="member-initial">JC</span><p class="member-name">Jianlin Chun</p><p class="member-role">Postdoctoral Fellow</p></article>
-        <article class="member-card"><span class="member-initial">SL</span><p class="member-name">Shuai Liu</p><p class="member-role">Postdoctoral Fellow, Yuxiu Program</p></article>
-        <article class="member-card"><span class="member-initial">RS</span><p class="member-name">Ruobin Sun</p><p class="member-role">Postdoctoral Fellow</p></article>
-        <article class="member-card"><span class="member-initial">JN</span><p class="member-name">Jiafeng Niu</p><p class="member-role">Postdoctoral Fellow</p></article>
-        <article class="member-card"><span class="member-initial">BY</span><p class="member-name">Bowen Yang</p><p class="member-role">Postdoctoral Fellow</p></article>
-        <article class="member-card"><span class="member-initial">PC</span><p class="member-name">Pengfei Chen</p><p class="member-role">Postdoctoral Fellow</p></article>
-        <article class="member-card"><span class="member-initial">WZ</span><p class="member-name">Weisai Zu</p><p class="member-role">Postdoctoral Fellow</p></article>
-      </div>
-    </section>
-
-    <section class="member-section">
-      <h2>Ph.D. Students</h2>
-      <div class="member-grid">
-        <article class="member-card"><span class="member-initial">YM</span><p class="member-name">Ming Yang</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2021 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">ZX</span><p class="member-name">Zhongqiu Xing</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2022 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">YB</span><p class="member-name">Yuyan Bao</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2023 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">XP</span><p class="member-name">Xichao Peng</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2023 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">ZW</span><p class="member-name">Zhouping Wu</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2023 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">HS</span><p class="member-name">Hailong Sun</p><p class="member-role">M.S.–Ph.D. Track</p><p class="member-meta">2023 Cohort; Ph.D. track from 2025</p></article>
-        <article class="member-card"><span class="member-initial">ZG</span><p class="member-name">Zhiqi Guo</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2024 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">YH</span><p class="member-name">Yingdi Hao</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2024 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">TZ</span><p class="member-name">Tianying Zhang</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2024 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">YR</span><p class="member-name">Yingzhi Ren</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2025 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">CZ</span><p class="member-name">Chengqian Zhang</p><p class="member-role">Ph.D. Student</p><p class="member-meta">2025 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">ZX</span><p class="member-name">Zhenhui Xu</p><p class="member-role">Jointly Supervised Ph.D. Student</p><p class="member-meta">2025 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">QT</span><p class="member-name">Qiang Tao</p><p class="member-role">Jointly Supervised Ph.D. Student</p><p class="member-meta">2025 Cohort</p></article>
-      </div>
-    </section>
-
-    <section class="member-section">
-      <h2>Master's Students</h2>
-      <div class="member-grid">
-        <article class="member-card"><span class="member-initial">FS</span><p class="member-name">Fengming Shi</p><p class="member-role">Master's Student</p><p class="member-meta">2023 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">JW</span><p class="member-name">Jiayu Wu</p><p class="member-role">Master's Student</p><p class="member-meta">2024 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">YZ</span><p class="member-name">Yuxuan Zhang</p><p class="member-role">Master's Student</p><p class="member-meta">2024 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">SZ</span><p class="member-name">Shiheng Zhang</p><p class="member-role">Master's Student</p><p class="member-meta">2024 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">HP</span><p class="member-name">Heng Ping</p><p class="member-role">Master's Student</p><p class="member-meta">2025 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">CC</span><p class="member-name">Changyuan Cao</p><p class="member-role">Master's Student</p><p class="member-meta">2025 Cohort</p></article>
-      </div>
-    </section>
-
-    <section class="member-section">
-      <h2>Undergraduate Students</h2>
-      <div class="member-grid">
-        <article class="member-card"><span class="member-initial">ZZ</span><p class="member-name">Zihan Zhang</p><p class="member-role">Undergraduate Student</p><p class="member-meta">2022 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">ZG</span><p class="member-name">Zihao Guo</p><p class="member-role">Undergraduate Student</p><p class="member-meta">2022 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">GM</span><p class="member-name">Ge Ma</p><p class="member-role">Undergraduate Student</p><p class="member-meta">2023 Cohort</p></article>
-        <article class="member-card"><span class="member-initial">JZ</span><p class="member-name">Jiaxu Zhang</p><p class="member-role">Undergraduate Student</p><p class="member-meta">2023 Cohort</p></article>
-      </div>
-    </section>
+    
+      <section class="member-section">
+        <h2>Postdoctoral Fellows</h2>
+        <div class="member-grid">
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">JY</span>
+              
+              <p class="member-name">Jinhai Yu</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">BC</span>
+              
+              <p class="member-name">Bin Chen</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">JC</span>
+              
+              <p class="member-name">Jianlin Chun</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">SL</span>
+              
+              <p class="member-name">Shuai Liu</p>
+              <p class="member-role">Postdoctoral Fellow, Yuxiu Program</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">RS</span>
+              
+              <p class="member-name">Ruobin Sun</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">JN</span>
+              
+              <p class="member-name">Jiafeng Niu</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">BY</span>
+              
+              <p class="member-name">Bowen Yang</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">PC</span>
+              
+              <p class="member-name">Pengfei Chen</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">WZ</span>
+              
+              <p class="member-name">Weisai Zu</p>
+              <p class="member-role">Postdoctoral Fellow</p>
+              
+            </article>
+          
+        </div>
+      </section>
+    
+      <section class="member-section">
+        <h2>Ph.D. Students</h2>
+        <div class="member-grid">
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">YM</span>
+              
+              <p class="member-name">Ming Yang</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2021 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">ZX</span>
+              
+              <p class="member-name">Zhongqiu Xing</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2022 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">YB</span>
+              
+              <p class="member-name">Yuyan Bao</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2023 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">XP</span>
+              
+              <p class="member-name">Xichao Peng</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2023 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">ZW</span>
+              
+              <p class="member-name">Zhouping Wu</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2023 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">HS</span>
+              
+              <p class="member-name">Hailong Sun</p>
+              <p class="member-role">M.S.-Ph.D. Track</p>
+              <p class="member-meta">2023 Cohort; Ph.D. track from 2025</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">ZG</span>
+              
+              <p class="member-name">Zhiqi Guo</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2024 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">YH</span>
+              
+              <p class="member-name">Yingdi Hao</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2024 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">TZ</span>
+              
+              <p class="member-name">Tianying Zhang</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2024 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">YR</span>
+              
+              <p class="member-name">Yingzhi Ren</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2025 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">CZ</span>
+              
+              <p class="member-name">Chengqian Zhang</p>
+              <p class="member-role">Ph.D. Student</p>
+              <p class="member-meta">2025 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">ZX</span>
+              
+              <p class="member-name">Zhenhui Xu</p>
+              <p class="member-role">Jointly Supervised Ph.D. Student</p>
+              <p class="member-meta">2025 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">QT</span>
+              
+              <p class="member-name">Qiang Tao</p>
+              <p class="member-role">Jointly Supervised Ph.D. Student</p>
+              <p class="member-meta">2025 Cohort</p>
+            </article>
+          
+        </div>
+      </section>
+    
+      <section class="member-section">
+        <h2>Master&#39;s Students</h2>
+        <div class="member-grid">
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">FS</span>
+              
+              <p class="member-name">Fengming Shi</p>
+              <p class="member-role">Master&#39;s Student</p>
+              <p class="member-meta">2023 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">JW</span>
+              
+              <p class="member-name">Jiayu Wu</p>
+              <p class="member-role">Master&#39;s Student</p>
+              <p class="member-meta">2024 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">YZ</span>
+              
+              <p class="member-name">Yuxuan Zhang</p>
+              <p class="member-role">Master&#39;s Student</p>
+              <p class="member-meta">2024 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">SZ</span>
+              
+              <p class="member-name">Shiheng Zhang</p>
+              <p class="member-role">Master&#39;s Student</p>
+              <p class="member-meta">2024 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">HP</span>
+              
+              <p class="member-name">Heng Ping</p>
+              <p class="member-role">Master&#39;s Student</p>
+              <p class="member-meta">2025 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">CC</span>
+              
+              <p class="member-name">Changyuan Cao</p>
+              <p class="member-role">Master&#39;s Student</p>
+              <p class="member-meta">2025 Cohort</p>
+            </article>
+          
+        </div>
+      </section>
+    
+      <section class="member-section">
+        <h2>Undergraduate Students</h2>
+        <div class="member-grid">
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">ZZ</span>
+              
+              <p class="member-name">Zihan Zhang</p>
+              <p class="member-role">Undergraduate Student</p>
+              <p class="member-meta">2022 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">ZG</span>
+              
+              <p class="member-name">Zihao Guo</p>
+              <p class="member-role">Undergraduate Student</p>
+              <p class="member-meta">2022 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">GM</span>
+              
+              <p class="member-name">Ge Ma</p>
+              <p class="member-role">Undergraduate Student</p>
+              <p class="member-meta">2023 Cohort</p>
+            </article>
+          
+            <article class="member-card">
+              
+                <span class="member-initial" aria-hidden="true">JZ</span>
+              
+              <p class="member-name">Jiaxu Zhang</p>
+              <p class="member-role">Undergraduate Student</p>
+              <p class="member-meta">2023 Cohort</p>
+            </article>
+          
+        </div>
+      </section>
+    
   </div>
 </section>
 
@@ -2980,19 +3258,72 @@
   <div class="wrap">
     <h2 class="section-title">Alumni</h2>
     <ul class="alumni-list" style="margin-top: 1.4rem;">
-      <li>Yuanyuan Xu, Ph.D. 2025</li>
-      <li>Beibei Zhao, 2021–Dec 2025</li>
-      <li>Tianhang Wang, Nov 2023–Aug 2025</li>
-      <li>Jiawei Zhang, 2021–2025</li>
-      <li>Ruiqi Zhu, Feb 2024–Dec 2025</li>
-      <li>Fulu Liu, 2021–Oct 2024</li>
-      <li>Renjie Li, 2021–Jul 2024</li>
-      <li>Ran Ge, Feb 2024–Jan 2025</li>
-      <li>Zhibin Ma, Mar 2023–Jan 2024</li>
-      <li>Hui Xu, Sep 2022–Jun 2023</li>
-      <li>Chongyue Luo, Sep 2022–Jun 2023</li>
-      <li>Pengcheng Qian, 2021–Mar 2022</li>
-      <li>Zhe Liu, Feb 2022–Sep 2022</li>
+      
+        <li>
+          <span class="alumni-name">Yuanyuan Xu, Ph.D. 2025</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Beibei Zhao, 2021-Dec 2025</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Tianhang Wang, Nov 2023-Aug 2025</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Jiawei Zhang, 2021-2025</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Ruiqi Zhu, Feb 2024-Dec 2025</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Fulu Liu, 2021-Oct 2024</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Renjie Li, 2021-Jul 2024</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Ran Ge, Feb 2024-Jan 2025</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Zhibin Ma, Mar 2023-Jan 2024</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Hui Xu, Sep 2022-Jun 2023</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Chongyue Luo, Sep 2022-Jun 2023</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Pengcheng Qian, 2021-Mar 2022</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
+        <li>
+          <span class="alumni-name">Zhe Liu, Feb 2022-Sep 2022</span>
+          <span class="alumni-destination">Current position: To be updated</span>
+        </li>
+      
     </ul>
   </div>
 </section>

@@ -2112,7 +2112,8 @@
       text-align: center;
     }
 
-    .member-initial {
+    .member-initial,
+    .member-photo {
       display: inline-flex;
       width: clamp(132px, 14vw, 190px);
       height: clamp(132px, 14vw, 190px);
@@ -2121,22 +2122,25 @@
       border-radius: 50%;
       border: 1px solid rgba(214, 232, 236, 0.34);
       color: transparent;
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.18), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
+      background-position: center;
+      background-size: cover;
+      object-fit: cover;
       box-shadow: inset 0 0 0 8px rgba(255, 255, 255, 0.025), 0 18px 40px rgba(0, 0, 0, 0.16);
       font-size: 0;
       font-weight: 850;
     }
 
     .member-card:nth-child(3n + 2) .member-initial {
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(142, 231, 240, 0.18), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
     }
 
     .member-card:nth-child(3n) .member-initial {
-      background:
+      background-image:
         radial-gradient(circle at 34% 28%, rgba(229, 196, 111, 0.16), transparent 32%),
         linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.035));
     }
@@ -2203,6 +2207,17 @@
       break-inside: avoid;
       margin: 0 0 0.55rem;
       color: var(--muted);
+    }
+
+    .alumni-name,
+    .alumni-destination {
+      display: block;
+    }
+
+    .alumni-destination {
+      margin-top: 0.1rem;
+      color: var(--dark-muted);
+      font-size: 0.88rem;
     }
 
     .page-hero {
@@ -2918,8 +2933,8 @@
         <button type="button" data-filter-type="category" data-filter="thdp">ThDP-dependent enzymes</button>
         <button type="button" data-filter-type="category" data-filter="flavoprotein">Flavoproteins</button>
         <button type="button" data-filter-type="category" data-filter="nadph">NADPH-dependent enzymes</button>
-        <button type="button" data-filter-type="category" data-filter="photoenzyme">Photoenzymes</button>
-        <button type="button" data-filter-type="category" data-filter="electroenzyme">Electroenzymatic</button>
+        <button type="button" data-filter-type="category" data-filter="photoenzyme">Photoenzymatic catalysis</button>
+        <button type="button" data-filter-type="category" data-filter="electroenzyme">Electroenzymatic catalysis</button>
         <button type="button" data-filter-type="category" data-filter="other">Other</button>
       </div>
       <div class="filter-row pub-filter">
