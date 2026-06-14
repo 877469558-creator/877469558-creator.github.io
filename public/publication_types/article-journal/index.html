@@ -2619,7 +2619,7 @@
     }
 
     .hero-band {
-      background: #07111c;
+      background: #ffffff;
       border-bottom: 1px solid #e7eceb;
     }
 
@@ -2636,7 +2636,7 @@
 
     .hero-energy {
       z-index: 2;
-      mix-blend-mode: screen;
+      mix-blend-mode: normal;
       opacity: 1;
     }
 
@@ -2667,20 +2667,20 @@
     .hero-copy h1,
     .hero-lede,
     .hero-scroll {
-      color: #ffffff;
-      text-shadow: 0 2px 14px rgba(2, 8, 18, 0.62);
+      color: var(--ink);
+      text-shadow: none;
     }
 
     .hero-lede {
-      color: rgba(255, 255, 255, 0.86);
+      color: #34424a;
     }
 
     .hero-scroll {
-      color: rgba(255, 255, 255, 0.74);
+      color: rgba(24, 33, 38, 0.62);
     }
 
     .hero-scroll:hover {
-      color: #ffffff;
+      color: var(--ink);
     }
 
     .band,
@@ -2763,16 +2763,20 @@
     .publication-links a,
     .publication-links span,
     .button {
-      border-color: #dfe7e5;
-      background: #ffffff;
-      color: var(--ink);
-      box-shadow: 0 8px 20px rgba(24, 33, 38, 0.06);
+      border-color: #cbd9d8;
+      background: rgba(255, 255, 255, 0.96);
+      color: #07131a;
+      box-shadow: 0 10px 24px rgba(24, 33, 38, 0.11);
     }
 
     .research-mini-flow span,
     .research-keywords span,
-    .compact-axis span {
-      background: #f7f9f8;
+    .compact-axis span,
+    .research-axis span {
+      background: rgba(255, 255, 255, 0.98);
+      color: #07131a;
+      border-color: #cbd9d8;
+      text-shadow: none;
     }
 
     .button:hover,
@@ -2923,6 +2927,23 @@
       color: #52616a;
     }
 
+    .publication-filters {
+      max-width: none;
+    }
+
+    .publication-filters .filter-row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 0.2rem;
+      scrollbar-width: thin;
+    }
+
+    .publication-filters .filter-row button {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
     .filter-row button:hover,
     .filter-row button.is-active {
       color: var(--ink);
@@ -2945,6 +2966,16 @@
 
     .filter-row strong {
       color: #182126;
+      flex: 0 0 auto;
+    }
+
+    .topic-card .direction-image {
+      background: #ffffff;
+      border-color: #dfe7e5;
+    }
+
+    .topic-card .direction-image img {
+      background: #ffffff;
     }
 
     .publication-section-title {
