@@ -2573,6 +2573,292 @@
       letter-spacing: 0;
     }
 
+     
+    body {
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    a {
+      color: #245b74;
+    }
+
+    a:hover {
+      color: var(--violet);
+    }
+
+    .site-header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e7eceb;
+      box-shadow: 0 2px 14px rgba(24, 33, 38, 0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand,
+    .main-nav a {
+      color: var(--ink);
+      text-shadow: none;
+    }
+
+    .brand small {
+      color: var(--muted);
+    }
+
+    .main-nav a:hover,
+    .main-nav a.is-active {
+      background: #eef2f1;
+      color: var(--ink);
+    }
+
+    .hero-band {
+      background: #ffffff;
+      border-bottom: 1px solid #e7eceb;
+    }
+
+    .hero-band::before {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(142, 231, 240, 0.16), transparent 36%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.92));
+      z-index: 1;
+    }
+
+    .hero-band::after {
+      background:
+        radial-gradient(circle at 52% 46%, rgba(255, 255, 255, 0.16), transparent 36%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.78));
+      z-index: 1;
+    }
+
+    .hero-video {
+      filter: invert(1) hue-rotate(180deg) saturate(0.82) contrast(0.86) brightness(1.08);
+      opacity: 0.58;
+    }
+
+    .hero-energy {
+      z-index: 2;
+      mix-blend-mode: multiply;
+      opacity: 0.78;
+    }
+
+    .hero-copy h1,
+    .hero-lede,
+    .hero-scroll {
+      color: var(--ink);
+      text-shadow: none;
+    }
+
+    .hero-lede {
+      color: #34424a;
+    }
+
+    .hero-scroll {
+      color: rgba(24, 33, 38, 0.62);
+    }
+
+    .hero-scroll:hover {
+      color: var(--ink);
+    }
+
+    .band,
+    .band.tint,
+    .home-research,
+    .home-publications,
+    .research-hero,
+    .page-hero,
+    .research-spotlight {
+      background: #ffffff;
+      color: var(--ink);
+      border-color: #e7eceb;
+    }
+
+    .home-research {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(142, 231, 240, 0.08), transparent 38%),
+        #ffffff;
+    }
+
+    .home-research::before,
+    .research-hero::before,
+    .page-hero::before,
+    .research-spotlight::before {
+      opacity: 0.04;
+      filter: invert(1) hue-rotate(180deg) saturate(0.8);
+    }
+
+    .research-hero::after,
+    .page-hero::after,
+    .research-spotlight::after {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.96));
+    }
+
+    .section-title,
+    .home-research-simple .section-title,
+    .home-news .section-title,
+    .research-hero-copy h1,
+    .page-hero h1,
+    .page-hero .section-title,
+    .profile-body h2,
+    .member-section h2,
+    .signature-item h2,
+    .focus-item h3,
+    .research-card h3,
+    .platform-item h3,
+    .direction-copy h3,
+    .side-note h3 {
+      color: var(--ink);
+    }
+
+    .section-lede,
+    .home-research-simple .section-lede,
+    .home-research-simple .section-lede.secondary,
+    .page-hero .section-lede,
+    .profile-body p,
+    .signature-item p,
+    .focus-item p,
+    .research-card p,
+    .platform-item p,
+    .direction-copy p,
+    .side-note p,
+    .paper-note,
+    .alumni-list li,
+    .timeline li {
+      color: var(--muted);
+    }
+
+    .home-research-simple .section-lede:first-of-type,
+    .research-hero-copy .section-lede:first-of-type {
+      color: var(--ink);
+    }
+
+    .research-mini-flow span,
+    .research-keywords span,
+    .compact-axis span,
+    .research-axis span,
+    .contact-list a,
+    .contact-list span,
+    .publication-links a,
+    .publication-links span,
+    .button {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      color: var(--ink);
+      box-shadow: 0 8px 20px rgba(24, 33, 38, 0.06);
+    }
+
+    .research-mini-flow span,
+    .research-keywords span,
+    .compact-axis span {
+      background: #f7f9f8;
+    }
+
+    .button:hover,
+    .home-research-simple .button:hover,
+    .home-research-copy .button:hover,
+    .publication-links a:hover {
+      color: var(--ink);
+      border-color: rgba(111, 0, 93, 0.28);
+      background: #f7f1f6;
+    }
+
+    .home-research-simple .button,
+    .home-research-copy .button {
+      color: var(--ink);
+      background: #ffffff;
+      border-color: #dfe7e5;
+      box-shadow: 0 8px 20px rgba(24, 33, 38, 0.06);
+    }
+
+    .focus-item,
+    .research-card,
+    .member-card,
+    .platform-item,
+    .news-item,
+    .signature-item,
+    .direction-panel,
+    .profile-feature,
+    .publication,
+    .research-hero-card,
+    .research-spotlight-figure,
+    .nature-card figure,
+    .topic-card figure,
+    .map-frame {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      color: var(--ink);
+      box-shadow: 0 14px 34px rgba(24, 33, 38, 0.08);
+    }
+
+    .member-card {
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .member-name,
+    .publication .venue,
+    .site-footer strong {
+      color: var(--ink);
+    }
+
+    .member-role,
+    .member-meta,
+    .alumni-destination,
+    .publication p,
+    .site-footer p {
+      color: var(--muted);
+    }
+
+    .people-tabs {
+      background: #ffffff;
+      border-block: 1px solid #e7eceb;
+    }
+
+    .people-tabs a,
+    .people-tabs span {
+      color: var(--muted);
+    }
+
+    .people-tabs a:hover,
+    .people-tabs a:first-child {
+      color: var(--ink);
+    }
+
+    .profile-photo {
+      background: #f7f9f8;
+      border-color: #dfe7e5;
+      box-shadow: 0 14px 34px rgba(24, 33, 38, 0.08);
+    }
+
+    .profile-role,
+    .section-kicker,
+    .research-number,
+    .news-date,
+    .timeline strong {
+      color: #9a7832;
+    }
+
+    .timeline li {
+      border-left-color: #dfe7e5;
+    }
+
+    .map-frame {
+      background: #ffffff;
+    }
+
+    .map-frame iframe {
+      filter: none;
+    }
+
+    .site-footer {
+      background: #ffffff;
+      border-top: 1px solid #e7eceb;
+      color: var(--muted);
+    }
+
+    .site-footer a {
+      color: var(--ink);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .light-orb,
       .bolt,
@@ -3232,7 +3518,7 @@
           
             <article class="member-card">
               
-                <span class="member-initial" aria-hidden="true">GM</span>
+                <img class="member-photo" src="/media/people/ge-ma.jpg" alt="Ge Ma">
               
               <p class="member-name">Ge Ma</p>
               <p class="member-role">Undergraduate Student</p>
@@ -3260,68 +3546,78 @@
     <ul class="alumni-list" style="margin-top: 1.4rem;">
       
         <li>
-          <span class="alumni-name">Yuanyuan Xu, Ph.D. 2025</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          <span class="alumni-name">Yuanyuan Xu, Ph.D. graduate, 2025; joined in 2021</span>
+          
+            <span class="alumni-destination">Current position: Nanjing Normal University</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Beibei Zhao, 2021-Dec 2025</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
+            <span class="alumni-destination">Current position: Postdoctoral Fellow, Johns Hopkins University</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Tianhang Wang, Nov 2023-Aug 2025</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Jiawei Zhang, 2021-2025</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
+            <span class="alumni-destination">Current position: Ph.D. Student, University of Bern</span>
+          
         </li>
       
         <li>
-          <span class="alumni-name">Ruiqi Zhu, Feb 2024-Dec 2025</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          <span class="alumni-name">Ruiqi Zhu, Feb 2024-2025</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Fulu Liu, 2021-Oct 2024</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
+            <span class="alumni-destination">Current position: Shaanxi University of Science and Technology</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Renjie Li, 2021-Jul 2024</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
+            <span class="alumni-destination">Current position: Nanjing Tech University</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Ran Ge, Feb 2024-Jan 2025</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Zhibin Ma, Mar 2023-Jan 2024</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Hui Xu, Sep 2022-Jun 2023</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Chongyue Luo, Sep 2022-Jun 2023</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Pengcheng Qian, 2021-Mar 2022</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
         </li>
       
         <li>
           <span class="alumni-name">Zhe Liu, Feb 2022-Sep 2022</span>
-          <span class="alumni-destination">Current position: To be updated</span>
+          
         </li>
       
     </ul>
