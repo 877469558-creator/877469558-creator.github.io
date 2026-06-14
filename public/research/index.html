@@ -887,7 +887,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / 70% auto no-repeat;
+      background: url("/media/home-protein-bg.png") center / 70% auto no-repeat;
       opacity: 0.1;
       filter: saturate(0.85);
       pointer-events: none;
@@ -1572,7 +1572,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      background: url("/media/home-protein-bg.png") center / cover no-repeat;
       opacity: 0.24;
       filter: saturate(0.95) contrast(1.02);
     }
@@ -2329,7 +2329,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      background: url("/media/home-protein-bg.png") center / cover no-repeat;
       filter: saturate(0.9) contrast(0.98);
       opacity: 0.28;
     }
@@ -2378,7 +2378,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: url("/research/media/home-protein-bg.png") center / cover no-repeat;
+      background: url("/media/home-protein-bg.png") center / cover no-repeat;
       opacity: 0.23;
       filter: saturate(0.95);
     }
@@ -2885,16 +2885,16 @@
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header">
     <div class="nav-shell">
-      <a class="brand" href="/research/">
+      <a class="brand" href="/">
         <span class="brand-word">HUANG GROUP</span>
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
-        <a href="/research/" class="">Home</a>
-        <a href="/research/research/" class="is-active">Research</a>
-        <a href="/research/publications/" class="">Publications</a>
-        <a href="/research/people/" class="">People</a>
-        <a href="/research/huang/" class="">Xiaoqiang Huang</a>
-        <a href="/research/contact/" class="">Contact</a>
+        <a href="/" class="">Home</a>
+        <a href="/research/" class="is-active">Research</a>
+        <a href="/publications/" class="">Publications</a>
+        <a href="/people/" class="">People</a>
+        <a href="/huang/" class="">Xiaoqiang Huang</a>
+        <a href="/contact/" class="">Contact</a>
       </nav>
     </div>
   </header>
@@ -2913,7 +2913,7 @@
       </div>
     </div>
     <figure class="research-hero-card research-image-card">
-      <img src="/research/media/research/research-overview.png" alt="Synthetic biology and synthetic chemistry concept diagram">
+      <img src="/media/research/research-overview.png" alt="Synthetic biology and synthetic chemistry concept diagram">
     </figure>
   </div>
 </section>
@@ -2960,7 +2960,7 @@
     <div class="topic-grid">
       <article class="topic-card">
         <figure class="direction-image">
-          <img src="/research/media/research/photoenzymatic-radical-catalysis.png" alt="Photoenzymatic radical catalysis illustration">
+          <img src="/media/research/photoenzymatic-radical-catalysis.png" alt="Photoenzymatic radical catalysis illustration">
         </figure>
         <span class="research-number">Direction 01</span>
         <h3>Photoenzymatic radical catalysis</h3>
@@ -2973,7 +2973,7 @@
 
       <article class="topic-card">
         <figure class="direction-image">
-          <img src="/research/media/research/electroenzymatic-asymmetric-synthesis.png" alt="Electroenzymatic asymmetric synthesis illustration">
+          <img src="/media/research/electroenzymatic-asymmetric-synthesis.png" alt="Electroenzymatic asymmetric synthesis illustration">
         </figure>
         <span class="research-number">Direction 02</span>
         <h3>Electroenzymatic asymmetric synthesis</h3>
@@ -2986,7 +2986,7 @@
 
       <article class="topic-card">
         <figure class="direction-image">
-          <img src="/research/media/research/protein-engineering-directed-evolution.png" alt="Protein engineering and directed evolution illustration">
+          <img src="/media/research/protein-engineering-directed-evolution.png" alt="Protein engineering and directed evolution illustration">
         </figure>
         <span class="research-number">Direction 03</span>
         <h3>Protein engineering and directed evolution</h3>
@@ -2999,7 +2999,7 @@
 
       <article class="topic-card">
         <figure class="direction-image">
-          <img src="/research/media/research/synthetic-biology-cell-factories.png" alt="Synthetic biology and cell factories illustration">
+          <img src="/media/research/synthetic-biology-cell-factories.png" alt="Synthetic biology and cell factories illustration">
         </figure>
         <span class="research-number">Direction 04</span>
         <h3>Synthetic biology and cell factories</h3>
@@ -3020,6 +3020,16 @@
     <p class="section-lede">By connecting mechanistic insight, protein structure, and synthetic utility, we aim to turn new-to-nature enzymatic transformations into reliable tools for the construction of chiral molecules.</p>
   </div>
 </section>
+<script>
+  (() => {
+    const oldGitHubHome =
+      window.location.hostname === "877469558-creator.github.io" &&
+      window.location.pathname.replace(/\/+$/, "") === "/research";
+    if (oldGitHubHome) {
+      window.location.replace("https://huangxlab.com/");
+    }
+  })();
+</script>
 
   </main>
   <footer class="site-footer" id="contact">
