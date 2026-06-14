@@ -113,8 +113,8 @@
     .brand {
       display: inline-flex;
       flex-direction: row;
-      align-items: flex-start;
-      gap: 0;
+      align-items: center;
+      gap: 0.78rem;
       color: #fff;
       text-decoration: none;
       font-family: var(--title-font);
@@ -130,6 +130,14 @@
     .brand-word {
       display: block;
       text-transform: uppercase;
+    }
+
+    .brand-emblem {
+      display: none;
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      flex: 0 0 auto;
     }
 
     .brand-symbol {
@@ -2612,52 +2620,68 @@
     }
 
     .hero-band {
-      background: #ffffff;
+      background: #07111c;
       border-bottom: 1px solid #e7eceb;
     }
 
-    .hero-band::before {
-      background:
-        radial-gradient(circle at 50% 42%, rgba(142, 231, 240, 0.16), transparent 36%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.92));
-      z-index: 1;
-    }
-
+    .hero-band::before,
     .hero-band::after {
-      background:
-        radial-gradient(circle at 52% 46%, rgba(255, 255, 255, 0.16), transparent 36%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.78));
+      background: transparent;
       z-index: 1;
     }
 
     .hero-video {
-      filter: invert(1) hue-rotate(180deg) saturate(0.82) contrast(0.86) brightness(1.08);
-      opacity: 0.58;
+      filter: none;
+      opacity: 1;
     }
 
     .hero-energy {
       z-index: 2;
-      mix-blend-mode: multiply;
-      opacity: 0.78;
+      mix-blend-mode: screen;
+      opacity: 1;
+    }
+
+    .light-orb.primary {
+      background: radial-gradient(circle, rgba(0, 189, 211, 0.7) 0, rgba(44, 180, 210, 0.36) 34%, rgba(44, 180, 210, 0.12) 62%, transparent 74%);
+      opacity: 1;
+      filter: blur(8px) drop-shadow(0 0 34px rgba(0, 177, 205, 0.58));
+    }
+
+    .light-orb.secondary {
+      background: radial-gradient(circle, rgba(232, 172, 48, 0.74) 0, rgba(232, 172, 48, 0.36) 38%, rgba(232, 172, 48, 0.12) 64%, transparent 76%);
+      opacity: 0.96;
+      filter: blur(8px) drop-shadow(0 0 30px rgba(200, 164, 93, 0.56));
+    }
+
+    .bolt {
+      opacity: 0.92;
+      background: linear-gradient(180deg, rgba(23, 120, 160, 1), rgba(18, 151, 192, 0.96) 44%, rgba(187, 133, 28, 0.98));
+      filter: drop-shadow(0 0 10px rgba(36, 132, 166, 0.72)) drop-shadow(0 0 22px rgba(200, 164, 93, 0.52));
+    }
+
+    .spark {
+      opacity: 0.96;
+      background: linear-gradient(90deg, transparent, rgba(20, 139, 178, 1), rgba(193, 143, 31, 0.96), transparent);
+      filter: drop-shadow(0 0 10px rgba(36, 132, 166, 0.58));
     }
 
     .hero-copy h1,
     .hero-lede,
     .hero-scroll {
-      color: var(--ink);
-      text-shadow: none;
+      color: #ffffff;
+      text-shadow: 0 2px 14px rgba(2, 8, 18, 0.62);
     }
 
     .hero-lede {
-      color: #34424a;
+      color: rgba(255, 255, 255, 0.86);
     }
 
     .hero-scroll {
-      color: rgba(24, 33, 38, 0.62);
+      color: rgba(255, 255, 255, 0.74);
     }
 
     .hero-scroll:hover {
-      color: var(--ink);
+      color: #ffffff;
     }
 
     .band,
@@ -2858,6 +2882,75 @@
 
     .site-footer a {
       color: var(--ink);
+    }
+
+    .brand-emblem {
+      display: block;
+      filter: drop-shadow(0 1px 2px rgba(24, 33, 38, 0.12));
+    }
+
+    .concept-step h3,
+    .publication-section-title h2,
+    .publication-year-heading,
+    .filter-row strong,
+    .publication-filters,
+    .publication.visual h3 {
+      color: var(--ink);
+    }
+
+    .concept-step p,
+    .filter-row button,
+    .prior-publications li {
+      color: #52616a;
+    }
+
+    .concept-step {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(24, 33, 38, 0.08);
+    }
+
+    .concept-step::after {
+      background: linear-gradient(90deg, #c8a45d, #8ecfd8);
+    }
+
+    .publication-filters {
+      color: var(--ink);
+    }
+
+    .filter-row button {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      color: #52616a;
+    }
+
+    .filter-row button:hover,
+    .filter-row button.is-active {
+      color: var(--ink);
+      border-color: rgba(200, 164, 93, 0.8);
+      background: #fff8e7;
+    }
+
+    .concept-step h3 {
+      color: #182126;
+    }
+
+    .concept-step p {
+      color: #50606a;
+    }
+
+    .publication-section-title h2,
+    .publication-year-heading {
+      color: #182126;
+    }
+
+    .filter-row strong {
+      color: #182126;
+    }
+
+    .publication-section-title {
+      border-color: #dfe7e5;
+      background: #f7f9f8;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -3188,6 +3281,7 @@
   <header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="/">
+        <img class="brand-emblem" src="/media/nju-emblem.png" alt="Nanjing University emblem">
         <span class="brand-word">HUANG GROUP</span>
       </a>
       <nav class="main-nav" aria-label="Primary navigation">
