@@ -2634,7 +2634,13 @@
 
     .hero-video {
       filter: none;
-      opacity: 1;
+      opacity: 0.82;
+    }
+
+    .hero-band::after {
+      background:
+        radial-gradient(ellipse at 50% 56%, rgba(255, 255, 255, 0.92) 0, rgba(255, 255, 255, 0.72) 31%, rgba(255, 255, 255, 0.26) 54%, transparent 74%);
+      z-index: 1;
     }
 
     .hero-energy {
@@ -2674,8 +2680,32 @@
       text-shadow: none;
     }
 
+    .hero-copy {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      z-index: -1;
+      width: min(1180px, 94vw);
+      height: clamp(170px, 24vw, 310px);
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: radial-gradient(ellipse, rgba(255, 255, 255, 0.96) 0, rgba(255, 255, 255, 0.82) 48%, rgba(255, 255, 255, 0.3) 72%, transparent 88%);
+      filter: blur(10px);
+    }
+
+    .hero-copy h1 {
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.86), 0 10px 34px rgba(255, 255, 255, 0.86);
+    }
+
     .hero-lede {
       color: #34424a;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.82);
     }
 
     .hero-scroll {
@@ -2896,6 +2926,7 @@
     }
 
     .concept-step h3,
+    .topic-card h3,
     .publication-section-title h2,
     .publication-year-heading,
     .filter-row strong,
@@ -2905,9 +2936,16 @@
     }
 
     .concept-step p,
+    .topic-card p,
     .filter-row button,
     .prior-publications li {
       color: #52616a;
+    }
+
+    .topic-card {
+      border-color: #dfe7e5;
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(24, 33, 38, 0.08);
     }
 
     .concept-step {
@@ -3522,7 +3560,7 @@
           
             <article class="member-card">
               
-                <span class="member-initial" aria-hidden="true">YR</span>
+                <img class="member-photo" src="/media/people/yingzhi-ren.jpg" alt="Yingzhi Ren">
               
               <p class="member-name">Yingzhi Ren</p>
               <p class="member-role">Ph.D. Student</p>
