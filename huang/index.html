@@ -2049,13 +2049,13 @@
 
     .nature-card,
     .topic-card {
-      padding: 1rem;
+      padding: 0.9rem;
     }
 
     .nature-card figure,
     .topic-card figure {
-      padding: 0.55rem;
-      margin-bottom: 1rem;
+      padding: 0.45rem;
+      margin-bottom: 0.85rem;
       box-shadow: none;
     }
 
@@ -2069,19 +2069,22 @@
 
     .topic-card .direction-image {
       padding: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
+      aspect-ratio: 16 / 9;
       background: rgba(7, 18, 29, 0.94);
     }
 
     .topic-card .direction-image img {
-      height: auto;
-      aspect-ratio: 3 / 2;
+      height: 100%;
+      aspect-ratio: auto;
       object-fit: contain;
       background: #07121d;
     }
 
     .topic-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
     .platform-grid {
@@ -2932,11 +2935,9 @@
     }
 
     .publication-filters .filter-row {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding-bottom: 0.2rem;
-      scrollbar-width: thin;
+      flex-wrap: wrap;
+      overflow: visible;
+      row-gap: 0.45rem;
     }
 
     .publication-filters .filter-row button {
@@ -3341,7 +3342,7 @@
       <p>His work has been published in leading journals including <em>Nature</em>, <em>Nature Catalysis</em>, <em>Nature Synthesis</em>, <em>Nature Communications</em>, <em>Accounts of Chemical Research</em>, <em>Journal of the American Chemical Society</em>, and <em>Angewandte Chemie International Edition</em>.</p>
       <div class="contact-list">
         <a href="mailto:huangx513@nju.edu.cn"><strong>Email:</strong> huangx513@nju.edu.cn</a>
-        <span><strong>Office:</strong> Room G220, Xianlin Campus, Nanjing University</span>
+        <span><strong>Office:</strong> G220</span>
       </div>
     </div>
   </div>

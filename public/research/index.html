@@ -2049,13 +2049,13 @@
 
     .nature-card,
     .topic-card {
-      padding: 1rem;
+      padding: 0.9rem;
     }
 
     .nature-card figure,
     .topic-card figure {
-      padding: 0.55rem;
-      margin-bottom: 1rem;
+      padding: 0.45rem;
+      margin-bottom: 0.85rem;
       box-shadow: none;
     }
 
@@ -2069,19 +2069,22 @@
 
     .topic-card .direction-image {
       padding: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
+      aspect-ratio: 16 / 9;
       background: rgba(7, 18, 29, 0.94);
     }
 
     .topic-card .direction-image img {
-      height: auto;
-      aspect-ratio: 3 / 2;
+      height: 100%;
+      aspect-ratio: auto;
       object-fit: contain;
       background: #07121d;
     }
 
     .topic-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
     .platform-grid {
@@ -2932,11 +2935,9 @@
     }
 
     .publication-filters .filter-row {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding-bottom: 0.2rem;
-      scrollbar-width: thin;
+      flex-wrap: wrap;
+      overflow: visible;
+      row-gap: 0.45rem;
     }
 
     .publication-filters .filter-row button {
@@ -3332,11 +3333,6 @@
       <p class="section-kicker">Research</p>
       <h1>Engineering enzymes to control radical chemistry with light and electricity</h1>
       <p class="section-lede">The Huang Group develops new-to-nature biocatalytic systems by combining enzyme active-site control with visible-light excitation, electrochemical redox inputs, and protein engineering.</p>
-      <div class="research-axis compact-axis" aria-label="Research themes">
-        <span>Photoenzymatic catalysis</span>
-        <span>Electroenzymatic catalysis</span>
-        <span>Directed evolution</span>
-      </div>
     </div>
     <figure class="research-hero-card research-image-card">
       <img src="/media/research/research-overview.png" alt="Synthetic biology and synthetic chemistry concept diagram">
@@ -3413,7 +3409,7 @@
   <div class="wrap research-vision">
     <p class="section-kicker">Research Vision</p>
     <h2 class="section-title">New catalytic functions for sustainable molecular synthesis</h2>
-    <p class="section-lede">By connecting mechanistic insight, protein structure, and synthetic utility, we aim to turn new-to-nature enzymatic transformations into reliable tools for the construction of chiral molecules.</p>
+    <p class="section-lede">By connecting mechanistic insight, protein structure, and synthetic utility, we aim to turn enzymatic transformations beyond nature into reliable tools for the construction of chiral molecules.</p>
   </div>
 </section>
 <script>
