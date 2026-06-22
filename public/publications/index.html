@@ -3013,14 +3013,22 @@
     }
 
     .publication-filters .filter-row {
-      flex-wrap: wrap;
-      overflow: visible;
       row-gap: 0.45rem;
+    }
+
+    .publication-filters .filter-row:first-child {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 0.16rem;
+      scrollbar-width: thin;
     }
 
     .publication-filters .filter-row button {
       flex: 0 0 auto;
       white-space: nowrap;
+      padding-inline: 0.45rem;
+      font-size: 0.86rem;
     }
 
     .filter-row button:hover,
@@ -3631,7 +3639,7 @@
           
         
         
-        <article class="publication visual pub-filter-item" data-year="2025" data-category="review other">
+        <article class="publication visual pub-filter-item" data-year="2025" data-category="review">
           <h3>25. Intelligent enzyme design and hybrid catalytic systems: Driving innovation in biocatalysis.</h3>
           
           <p class="publication-meta">Qu, G.*; Zhong, F.*; Xu, J.*; Huang, X.*; Sun, Z.* <strong class="venue"><em>Green Synth. Catal.</em> 2025</strong>. DOI: 10.1016/j.gresc.2025.12.002</p>
@@ -3907,7 +3915,7 @@
           
         
         
-        <article class="publication visual pub-filter-item" data-year="2024" data-category="photoenzyme review other">
+        <article class="publication visual pub-filter-item" data-year="2024" data-category="photoenzyme review">
           <h3>12. Repurposing type I aldolase for stereospecific radical coupling with light.</h3>
           
           <p class="publication-meta">Yu, J.; Hao, Y.; Huang, X.* <strong class="venue"><em>Chem Catalysis</em> 2024, 4(11)</strong>. DOI: 10.1016/j.checat.2024.101191</p>
@@ -4008,7 +4016,7 @@
         
         
         
-        <article class="publication visual pub-filter-item" data-year="2024" data-category="review other">
+        <article class="publication visual pub-filter-item" data-year="2024" data-category="review">
           <h3>7. Focused rational iterative site-specific mutagenesis (FRISM): A powerful method for enzyme engineering.</h3>
           
           <p class="publication-meta">Bao, Y.; Xu, Y.; Huang, X.* <strong class="venue"><em>Mol. Catal.</em> 2024, 553, 113755</strong></p>

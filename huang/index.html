@@ -3013,14 +3013,22 @@
     }
 
     .publication-filters .filter-row {
-      flex-wrap: wrap;
-      overflow: visible;
       row-gap: 0.45rem;
+    }
+
+    .publication-filters .filter-row:first-child {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 0.16rem;
+      scrollbar-width: thin;
     }
 
     .publication-filters .filter-row button {
       flex: 0 0 auto;
       white-space: nowrap;
+      padding-inline: 0.45rem;
+      font-size: 0.86rem;
     }
 
     .filter-row button:hover,
