@@ -3434,7 +3434,7 @@
         <button type="button" data-filter-type="category" data-filter="thdp">ThDP-dependent enzymes</button>
         <button type="button" data-filter-type="category" data-filter="flavoprotein">Flavoproteins</button>
         <button type="button" data-filter-type="category" data-filter="nadph">NADPH-dependent enzymes</button>
-        <button type="button" data-filter-type="category" data-filter="photoenzyme">Photoenzymatic catalysis</button>
+        <button type="button" data-filter-type="category" data-filter="photoenzyme">Photobiocatalysis</button>
         <button type="button" data-filter-type="category" data-filter="electroenzyme">Electroenzymatic catalysis</button>
         <button type="button" data-filter-type="category" data-filter="review">Review</button>
         <button type="button" data-filter-type="category" data-filter="other">Other</button>
@@ -4209,8 +4209,21 @@
     const classify = (text) => {
       const value = text.toLowerCase();
       const categories = [];
+      const isBiocatalytic =
+        value.includes("enzyme") ||
+        value.includes("enzymatic") ||
+        value.includes("biocatal") ||
+        value.includes("reductase") ||
+        value.includes("flavoprotein") ||
+        value.includes("photodecarboxylase") ||
+        value.includes("thiamine") ||
+        value.includes("thdp") ||
+        value.includes("nadph");
       if (value.includes("thiamine") || value.includes("thdp")) categories.push("thdp");
-      if (value.includes("electro") || value.includes("electricity")) categories.push("electroenzyme");
+      if (
+        value.includes("electroenzymatic") ||
+        ((value.includes("electrochem") || value.includes("electricity")) && isBiocatalytic)
+      ) categories.push("electroenzyme");
       if (value.includes("nadph") || value.includes("imine reductase")) categories.push("nadph");
       if (
         value.includes("flavoprotein") ||
@@ -4218,7 +4231,11 @@
         value.includes("ene reductase") ||
         value.includes("photodecarboxylase")
       ) categories.push("flavoprotein");
-      if (value.includes("photo") || value.includes("visible-light") || value.includes("visible light") || value.includes("light-driven")) categories.push("photoenzyme");
+      if (
+        value.includes("photobiocatal") ||
+        value.includes("photoenzymatic") ||
+        ((value.includes("photo") || value.includes("visible-light") || value.includes("visible light") || value.includes("light-driven")) && isBiocatalytic)
+      ) categories.push("photoenzyme");
       if (
         value.includes("review") ||
         value.includes("minireview") ||
