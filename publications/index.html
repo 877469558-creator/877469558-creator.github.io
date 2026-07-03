@@ -4222,7 +4222,8 @@
       if (value.includes("thiamine") || value.includes("thdp")) categories.push("thdp");
       if (
         value.includes("electroenzymatic") ||
-        ((value.includes("electrochem") || value.includes("electricity")) && isBiocatalytic)
+        value.includes("electro-enzyme") ||
+        value.includes("electroenzyme")
       ) categories.push("electroenzyme");
       if (value.includes("nadph") || value.includes("imine reductase")) categories.push("nadph");
       if (
